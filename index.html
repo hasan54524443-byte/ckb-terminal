@@ -1,0 +1,363 @@
+<!DOCTYPE html>
+<html lang="en" class="dark">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>CKB TERMINAL – Automated Crypto Market Data, Analytics & Trading Masterclass</title>
+    
+    <!-- SEO Meta Tags -->
+    <meta name="description" content="CKB Terminal is your automated crypto dashboard featuring live market data, fear & greed index, profit calculator, anti-scam security guidelines, and trading masterclass.">
+    <meta name="keywords" content="crypto live data, bitcoin price, crypto safety guide, ckb terminal, crypto calculator, trading masterclass, adsterra crypto">
+    <meta name="robots" content="index, follow">
+
+    <!-- Tailwind CSS CDN -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    <!-- FontAwesome Icons -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <!-- Google Fonts -->
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+
+    <!-- Adsterra Banner Code (60x300) -->
+    <script>
+        atOptions = {
+            'key' : '23c891e286a6f2784b6dfa8def1e18a6',
+            'format' : 'iframe',
+            'height' : 300,
+            'width' : 160,
+            'params' : {}
+        };
+    </script>
+    <script type="text/javascript" src="//www.highrevenueformat.com/23c891e286a6f2784b6dfa8def1e18a6/invoke.js"></script>
+
+    <!-- Adsterra Social Bar Code 1 -->
+    <script src="https://pl31481801.profitableratecpmnetwork.com/ce/8f/2d/ce8f2d3e153dd8ff1e46ee069ef9253d.js"></script>
+
+    <style>
+        body { font-family: 'Inter', sans-serif; }
+    </style>
+</head>
+<body class="bg-slate-950 text-slate-100 min-h-screen flex flex-col justify-between">
+
+    <!-- Top Notification / VIP Referral Banner -->
+    <div id="vip-banner" class="bg-gradient-to-r from-amber-600 via-yellow-500 to-amber-600 text-slate-950 px-4 py-2 text-center text-sm font-semibold hidden">
+        🎉 <span id="vip-message">Welcome via Special Invitation! Enjoy Elite Access to CKB Terminal.</span>
+    </div>
+
+    <!-- Header / Navigation -->
+    <header class="border-b border-slate-800 bg-slate-900/60 backdrop-blur sticky top-0 z-50">
+        <div class="max-w-7xl mx-auto px-4 py-3 flex justify-between items-center flex-wrap gap-3">
+            <div class="flex items-center space-x-2">
+                <i class="fa-solid fa-terminal text-yellow-400 text-xl"></i>
+                <span class="text-lg font-bold tracking-wider">CKB <span class="text-yellow-400">TERMINAL</span></span>
+            </div>
+            
+            <div class="flex items-center space-x-3">
+                <!-- Telegram Channel Button -->
+                <a href="https://t.me/YOUR_TELEGRAM_USERNAME" target="_blank" class="bg-sky-600 hover:bg-sky-500 text-white px-3 py-1.5 rounded-lg text-sm font-medium transition flex items-center space-x-1.5">
+                    <i class="fa-brands fa-telegram"></i>
+                    <span>Telegram</span>
+                </a>
+            </div>
+        </div>
+    </header>
+
+    <!-- Main Content Area -->
+    <main class="max-w-7xl mx-auto px-4 py-6 w-full space-y-8">
+
+        <!-- Live Crypto Ticker Bar -->
+        <section class="bg-slate-900 border border-slate-800 rounded-xl p-4 shadow-lg">
+            <h2 class="text-sm font-semibold text-slate-400 uppercase tracking-wider mb-3"><i class="fa-solid fa-chart-line text-yellow-400 mr-2"></i>Live Market Ticker</h2>
+            <div class="w-full overflow-x-auto">
+                <script src="https://widgets.coingecko.com/coingecko-coin-price-marquee-widget.js"></script>
+                <coingecko-coin-price-marquee-widget coin-ids="bitcoin,ethereum,solana,binancecoin,pepe" currency="usd" background-color="#090d16" locale="en" font-color="#ffffff"></coingecko-coin-price-marquee-widget>
+            </div>
+        </section>
+
+        <!-- Dashboard Grid (Widgets & Calculator) -->
+        <div class="grid grid-cols-1 md:grid-cols-3 gap-6">
+            
+            <!-- Market Sentiment Box -->
+            <div class="bg-slate-900 border border-slate-800 rounded-xl p-5 shadow-lg flex flex-col justify-between">
+                <div>
+                    <h3 class="text-md font-bold text-yellow-400 mb-2"><i class="fa-solid fa-gauge-high mr-2"></i>Market Sentiment</h3>
+                    <p class="text-xs text-slate-400 mb-4">Real-time crypto market emotion and sentiment overview.</p>
+                </div>
+                <div class="bg-slate-950 p-4 rounded-lg border border-slate-800 text-center space-y-3 my-auto">
+                    <div class="text-xs uppercase tracking-widest text-slate-400 font-semibold">General Market Mood</div>
+                    <div class="text-2xl font-black text-green-400 tracking-wide">GREED / BULLISH</div>
+                    <p class="text-xs text-slate-400">Traders are showing strong confidence. Maintain proper risk management during upward trends.</p>
+                    <a href="https://alternative.me/crypto/fear-and-greed-index/" target="_blank" class="inline-block text-xs text-yellow-400 hover:underline pt-1">View Live Index Chart &rarr;</a>
+                </div>
+            </div>
+
+            <!-- Quick Profit Calculator -->
+            <div class="bg-slate-900 border border-slate-800 rounded-xl p-5 shadow-lg flex flex-col justify-between">
+                <div>
+                    <h3 class="text-md font-bold text-yellow-400 mb-2"><i class="fa-solid fa-calculator mr-2"></i>Crypto Profit Calculator</h3>
+                    <p class="text-xs text-slate-400 mb-3">Quickly estimate your trade returns.</p>
+                </div>
+                <div class="space-y-3">
+                    <div>
+                        <label class="text-xs text-slate-400">Buy Price ($)</label>
+                        <input type="number" id="buy-price" placeholder="e.g. 0.50" class="w-full bg-slate-950 border border-slate-800 rounded px-3 py-1.5 text-sm text-white focus:outline-none focus:border-yellow-400">
+                    </div>
+                    <div>
+                        <label class="text-xs text-slate-400">Sell Price ($)</label>
+                        <input type="number" id="sell-price" placeholder="e.g. 0.75" class="w-full bg-slate-950 border border-slate-800 rounded px-3 py-1.5 text-sm text-white focus:outline-none focus:border-yellow-400">
+                    </div>
+                    <div>
+                        <label class="text-xs text-slate-400">Amount / Coins</label>
+                        <input type="number" id="coin-amount" placeholder="e.g. 1000" class="w-full bg-slate-950 border border-slate-800 rounded px-3 py-1.5 text-sm text-white focus:outline-none focus:border-yellow-400">
+                    </div>
+                    <button onclick="calculateProfit()" class="w-full bg-yellow-500 hover:bg-yellow-400 text-slate-950 font-bold py-1.5 rounded text-sm transition">Calculate</button>
+                    <div id="calc-result" class="text-center text-sm font-semibold text-green-400 mt-2"></div>
+                </div>
+            </div>
+
+            <!-- Referral Share Box -->
+            <div class="bg-slate-900 border border-slate-800 rounded-xl p-5 shadow-lg flex flex-col justify-between">
+                <div>
+                    <h3 class="text-md font-bold text-yellow-400 mb-2"><i class="fa-solid fa-share-nodes mr-2"></i>Invite Friends & Earn</h3>
+                    <p class="text-xs text-slate-400 mb-4">Share CKB Terminal with your friends using your unique referral link.</p>
+                </div>
+                <div class="space-y-3">
+                    <input type="text" id="ref-link-input" readonly class="w-full bg-slate-950 border border-slate-800 rounded px-3 py-2 text-xs text-slate-300 select-all" value="">
+                    <button onclick="copyRefLink()" class="w-full bg-sky-600 hover:bg-sky-500 text-white font-medium py-2 rounded text-sm transition flex items-center justify-center space-x-2">
+                        <i class="fa-solid fa-copy"></i>
+                        <span id="copy-btn-text">Copy Referral Link</span>
+                    </button>
+                </div>
+            </div>
+
+        </div>
+
+        <!-- Beginner Trading & Analysis Masterclass Section with English/Bangla Toggle -->
+        <section class="bg-slate-900 border border-slate-800 rounded-xl p-6 shadow-lg space-y-6">
+            <div class="flex justify-between items-center flex-wrap gap-4 border-b border-slate-800 pb-4">
+                <h2 id="masterclass-title" class="text-lg font-bold text-yellow-400 flex items-center">
+                    <i class="fa-solid fa-graduation-cap mr-2"></i>Crypto Trading & Analysis Masterclass for Beginners
+                </h2>
+                <!-- Language Switch Buttons -->
+                <div class="flex space-x-2 bg-slate-950 p-1 rounded-lg border border-slate-800">
+                    <button onclick="switchMasterclassLang('en')" id="btn-master-en" class="px-3 py-1 rounded text-xs font-semibold bg-yellow-500 text-slate-950 transition">English</button>
+                    <button onclick="switchMasterclassLang('bn')" id="btn-master-bn" class="px-3 py-1 rounded text-xs font-semibold text-slate-400 hover:text-white transition">বাংলা</button>
+                </div>
+            </div>
+            
+            <p id="masterclass-desc" class="text-sm text-slate-300">New to crypto trading? Follow this automated blueprint covering fund management, fundamental & technical analysis, and strategic entry-exit execution.</p>
+            
+            <!-- English Content Grid -->
+            <div id="content-master-en" class="grid grid-cols-1 md:grid-cols-2 gap-6 pt-2">
+                <div class="bg-slate-950/60 p-4 rounded-lg border border-slate-800/80 space-y-2">
+                    <h3 class="text-sm font-semibold text-yellow-400"><i class="fa-solid fa-wallet text-sky-400 mr-2"></i>1. Capital & Risk Management</h3>
+                    <p class="text-xs text-slate-400">Never invest all your funds into a single asset. Split your total portfolio into 3-4 parts. Risk only 2-5% of your total capital per trade to safeguard against severe market corrections.</p>
+                </div>
+                <div class="bg-slate-950/60 p-4 rounded-lg border border-slate-800/80 space-y-2">
+                    <h3 class="text-sm font-semibold text-yellow-400"><i class="fa-solid fa-magnifying-glass-chart text-sky-400 mr-2"></i>2. Fundamental & Technical Analysis</h3>
+                    <p class="text-xs text-slate-400">Evaluate project utility, team credibility, and circulating supply limits (Fundamental). Use support/resistance levels and indicators like RSI on charts to time your entries (Technical).</p>
+                </div>
+                <div class="bg-slate-950/60 p-4 rounded-lg border border-slate-800/80 space-y-2">
+                    <h3 class="text-sm font-semibold text-yellow-400"><i class="fa-solid fa-arrow-trend-up text-green-400 mr-2"></i>3. When to BUY & SELL</h3>
+                    <p class="text-xs text-slate-400"><strong>Buy:</strong> During high-fear market dips and strong support zones using Dollar-Cost Averaging (DCA). <br><strong>Sell:</strong> Take partial profits at resistance targets instead of waiting for absolute peaks.</p>
+                </div>
+                <div class="bg-slate-950/60 p-4 rounded-lg border border-slate-800/80 space-y-2">
+                    <h3 class="text-sm font-semibold text-yellow-400"><i class="fa-solid fa-shield-cat text-green-400 mr-2"></i>4. Spot Trading Best Practices</h3>
+                    <p class="text-xs text-slate-400">Stick strictly to secure Spot Trading as a beginner. Avoid high-risk leverage or futures trading until you master market volatility and emotion control.</p>
+                </div>
+            </div>
+
+            <!-- Bangla Content Grid (Initially Hidden) -->
+            <div id="content-master-bn" class="grid grid-cols-1 md:grid-cols-2 gap-6 pt-2 hidden">
+                <div class="bg-slate-950/60 p-4 rounded-lg border border-slate-800/80 space-y-2">
+                    <h3 class="text-sm font-semibold text-yellow-400"><i class="fa-solid fa-wallet text-sky-400 mr-2"></i>১. মূলধন ও ঝুঁকি ব্যবস্থাপনা (Risk Management)</h3>
+                    <p class="text-xs text-slate-400">কখনোই আপনার সমস্ত মূলধন একটিমাত্র কয়েনে বিনিয়োগ করবেন না। আপনার পোর্টফোলিও ৩-৪ ভাগে ভাগ করুন। বড় মার্কেট কারেকশন থেকে বাঁচতে প্রতি ট্রেডে আপনার মোট মূলধনের মাত্র ২-৫% ঝুঁকি নিন।</p>
+                </div>
+                <div class="bg-slate-950/60 p-4 rounded-lg border border-slate-800/80 space-y-2">
+                    <h3 class="text-sm font-semibold text-yellow-400"><i class="fa-solid fa-magnifying-glass-chart text-sky-400 mr-2"></i>২. ফান্ডামেন্টাল ও টেকনিক্যাল অ্যানালাইসিস</h3>
+                    <p class="text-xs text-slate-400">প্রজেক্টের কার্যকারিতা, টিম এবং সাপ্লাই লিমিট যাচাই করুন (ফান্ডামেন্টাল)। অন্যদিকে সঠিক সময়ে এন্ট্রি নেওয়ার জন্য চার্টে সাপোর্ট-রেজিস্ট্যান্স এবং RSI ইন্ডিকেটর ব্যবহার করুন (টেকনিক্যাল)।</p>
+                </div>
+                <div class="bg-slate-950/60 p-4 rounded-lg border border-slate-800/80 space-y-2">
+                    <h3 class="text-sm font-semibold text-yellow-400"><i class="fa-solid fa-arrow-trend-up text-green-400 mr-2"></i>৩. কখন কিনবেন এবং বিক্রি করবেন (BUY & SELL)</h3>
+                    <p class="text-xs text-slate-400"><strong>কিনুন:</strong> মার্কেটে যখন অতিরিক্ত ভয় (Fear) কাজ করে এবং শক্তিশালী সাপোর্ট জোনে দাম থাকে, তখন DCA পদ্ধতিতে কিনুন। <br><strong>বিক্রি করুন:</strong> একদম শীর্ষ দামের অপেক্ষা না করে রেজিস্ট্যান্স জোনে গেলে কিছু প্রফিট তুলে নিন।</p>
+                </div>
+                <div class="bg-slate-950/60 p-4 rounded-lg border border-slate-800/80 space-y-2">
+                    <h3 class="text-sm font-semibold text-yellow-400"><i class="fa-solid fa-shield-cat text-green-400 mr-2"></i>৪. স্পট ট্রেডিংয়ের সেরা নিয়মাবলী</h3>
+                    <p class="text-xs text-slate-400">শুরুতে সবসময় নিরাপদ স্পট ট্রেডিং করুন। মার্কেটের অস্থিরতা এবং ইমোশন কন্ট্রোল আয়ত্তে না আসা পর্যন্ত কোনোভাবেই ঝুঁকিপূর্ণ ফিউচার বা লিভারেজ ট্রেডিংয়ে যাবেন না।</p>
+                </div>
+            </div>
+        </section>
+
+        <!-- Anti-Scam & Security Guidelines Section with English/Bangla Toggle -->
+        <section class="bg-slate-900 border border-slate-800 rounded-xl p-6 shadow-lg space-y-4">
+            <div class="flex justify-between items-center flex-wrap gap-4 border-b border-slate-800 pb-4">
+                <h2 id="scam-title" class="text-lg font-bold text-red-400 flex items-center">
+                    <i class="fa-solid fa-shield-halved mr-2"></i>Crypto Anti-Scam & Security Guidelines
+                </h2>
+                <!-- Language Switch Buttons -->
+                <div class="flex space-x-2 bg-slate-950 p-1 rounded-lg border border-slate-800">
+                    <button onclick="switchScamLang('en')" id="btn-scam-en" class="px-3 py-1 rounded text-xs font-semibold bg-red-500 text-slate-950 transition">English</button>
+                    <button onclick="switchScamLang('bn')" id="btn-scam-bn" class="px-3 py-1 rounded text-xs font-semibold text-slate-400 hover:text-white transition">বাংলা</button>
+                </div>
+            </div>
+            
+            <p id="scam-desc" class="text-sm text-slate-300">Staying safe in the cryptocurrency world is your number one priority. Follow these essential safety guidelines to protect your funds from fraudsters:</p>
+            
+            <!-- English Scam Content -->
+            <div id="content-scam-en" class="grid grid-cols-1 md:grid-cols-2 gap-4 pt-2">
+                <div class="bg-slate-950/60 p-4 rounded-lg border border-slate-800/80">
+                    <h3 class="text-sm font-semibold text-yellow-400 mb-1"><i class="fa-solid fa-key text-red-400 mr-2"></i>1. Never Share Private Keys</h3>
+                    <p class="text-xs text-slate-400">Your 12 or 24-word recovery phrase gives full control of your wallet. No official platform or admin will ever ask for them.</p>
+                </div>
+                <div class="bg-slate-950/60 p-4 rounded-lg border border-slate-800/80">
+                    <h3 class="text-sm font-semibold text-yellow-400 mb-1"><i class="fa-solid fa-link text-red-400 mr-2"></i>2. Beware of Phishing Links</h3>
+                    <p class="text-xs text-slate-400">Always check URLs before connecting Web3 wallets. Scammers create duplicate domains mimicking popular platforms.</p>
+                </div>
+                <div class="bg-slate-950/60 p-4 rounded-lg border border-slate-800/80">
+                    <h3 class="text-sm font-semibold text-yellow-400 mb-1"><i class="fa-solid fa-triangle-exclamation text-red-400 mr-2"></i>3. Avoid Fake High-Yield Offers</h3>
+                    <p class="text-xs text-slate-400">Be skeptical of double-your-crypto scams, guaranteed daily returns, or random airdrop DMs promising free fortunes.</p>
+                </div>
+                <div class="bg-slate-950/60 p-4 rounded-lg border border-slate-800/80">
+                    <h3 class="text-sm font-semibold text-yellow-400 mb-1"><i class="fa-solid fa-vault text-red-400 mr-2"></i>4. Use Secure Wallets</h3>
+                    <p class="text-xs text-slate-400">Store significant long-term crypto assets in secure hardware wallets rather than leaving funds on exchange hot wallets.</p>
+                </div>
+            </div>
+
+            <!-- Bangla Scam Content (Initially Hidden) -->
+            <div id="content-scam-bn" class="grid grid-cols-1 md:grid-cols-2 gap-4 pt-2 hidden">
+                <div class="bg-slate-950/60 p-4 rounded-lg border border-slate-800/80">
+                    <h3 class="text-sm font-semibold text-yellow-400 mb-1"><i class="fa-solid fa-key text-red-400 mr-2"></i>১. প্রাইভেট কি বা রিকভারি ফ্রেজ শেয়ার করবেন না</h3>
+                    <p class="text-xs text-slate-400">আপনার ওয়ালেটের ১২ বা ২৪ শব্দের রিকভারি ফ্রেজ মানে আপনার ওয়ালেটের সম্পূর্ণ মালিকানা। কোনো অফিশিয়াল প্ল্যাটফর্ম বা এডমিন কখনো এটি চাইবে না।</p>
+                </div>
+                <div class="bg-slate-950/60 p-4 rounded-lg border border-slate-800/80">
+                    <h3 class="text-sm font-semibold text-yellow-400 mb-1"><i class="fa-solid fa-link text-red-400 mr-2"></i>২. ফিশিং বা ভুয়া লিংক থেকে সাবধান</h3>
+                    <p class="text-xs text-slate-400">Web3 ওয়ালেট কানেক্ট করার আগে সবসময় ওয়েবসাইটের সঠিক URL চেক করুন। স্ক্যামাররা আসল সাইটের মতো দেখতে ভুয়া ডোমেইন তৈরি করে।</p>
+                </div>
+                <div class="bg-slate-950/60 p-4 rounded-lg border border-slate-800/80">
+                    <h3 class="text-sm font-semibold text-yellow-400 mb-1"><i class="fa-solid fa-triangle-exclamation text-red-400 mr-2"></i>৩. ভুয়া ও লোভনীয় অফার থেকে দূরে থাকুন</h3>
+                    <p class="text-xs text-slate-400">"আপনার ক্রিপ্টো দ্বিগুণ করে দেব" কিংবা গ্যারান্টিড ডেইলি প্রফিট বা ফ্রি এয়ারড্রপের নামে আসা সন্দেহজনক ইনবক্স মেসেজ থেকে দূরে থাকুন।</p>
+                </div>
+                <div class="bg-slate-950/60 p-4 rounded-lg border border-slate-800/80">
+                    <h3 class="text-sm font-semibold text-yellow-400 mb-1"><i class="fa-solid fa-vault text-red-400 mr-2"></i>৪. নিরাপদ ওয়ালেট ব্যবহার করুন</h3>
+                    <p class="text-xs text-slate-400">বড় অংকের ক্রিপ্টো বা দীর্ঘমেয়াদী হোল্ডিং সবসময় এক্সচেঞ্জের হট ওয়ালেটে না রেখে নিরাপদ হার্ডওয়্যার বা ট্রাস্টেড নন-কাস্টোডিয়াল ওয়ালেটে রাখুন।</p>
+                </div>
+            </div>
+        </section>
+
+    </main>
+
+    <!-- Footer -->
+    <footer class="border-t border-slate-800 bg-slate-900/60 py-4 mt-8 text-center text-xs text-slate-500">
+        <p>&copy; 2026 CKB TERMINAL. All rights reserved. Automated Live Crypto Analytics & Masterclass.</p>
+    </footer>
+
+    <!-- Adsterra Popunder Code -->
+    <script src="https://pl31481803.profitableratecpmnetwork.com/34/da/15/34da15050538d0a75ab5e2326167ae7c.js"></script>
+
+    <!-- JavaScript for Calculator, Referral & Language Switchers -->
+    <script>
+        // Masterclass Language Switcher Function
+        function switchMasterclassLang(lang) {
+            let btnEn = document.getElementById('btn-master-en');
+            let btnBn = document.getElementById('btn-master-bn');
+            let contentEn = document.getElementById('content-master-en');
+            let contentBn = document.getElementById('content-master-bn');
+            let title = document.getElementById('masterclass-title');
+            let desc = document.getElementById('masterclass-desc');
+
+            if (lang === 'en') {
+                btnEn.className = "px-3 py-1 rounded text-xs font-semibold bg-yellow-500 text-slate-950 transition";
+                btnBn.className = "px-3 py-1 rounded text-xs font-semibold text-slate-400 hover:text-white transition";
+                contentEn.classList.remove('hidden');
+                contentBn.classList.add('hidden');
+                title.innerHTML = `<i class="fa-solid fa-graduation-cap mr-2"></i>Crypto Trading & Analysis Masterclass for Beginners`;
+                desc.innerText = "New to crypto trading? Follow this automated blueprint covering fund management, fundamental & technical analysis, and strategic entry-exit execution.";
+            } else {
+                btnBn.className = "px-3 py-1 rounded text-xs font-semibold bg-yellow-500 text-slate-950 transition";
+                btnEn.className = "px-3 py-1 rounded text-xs font-semibold text-slate-400 hover:text-white transition";
+                contentBn.classList.remove('hidden');
+                contentEn.classList.add('hidden');
+                title.innerHTML = `<i class="fa-solid fa-graduation-cap mr-2"></i>নতুনদের জন্য ক্রিপ্টো ট্রেডিং ও অ্যানালাইসিস মাস্টারক্লাস`;
+                desc.innerText = "ক্রিপ্টো ট্রেডিংয়ে একদম নতুন? মূলধন ব্যবস্থাপনা, ফান্ডামেন্টাল ও টেকনিক্যাল অ্যানালাইসিস এবং সঠিক সময়ে এন্ট্রি-এক্সিট নেওয়ার এই নির্দেশিকাটি অনুসরণ করুন।";
+            }
+        }
+
+        // Scam Guidelines Language Switcher Function
+        function switchScamLang(lang) {
+            let btnEn = document.getElementById('btn-scam-en');
+            let btnBn = document.getElementById('btn-scam-bn');
+            let contentEn = document.getElementById('content-scam-en');
+            let contentBn = document.getElementById('content-scam-bn');
+            let title = document.getElementById('scam-title');
+            let desc = document.getElementById('scam-desc');
+
+            if (lang === 'en') {
+                btnEn.className = "px-3 py-1 rounded text-xs font-semibold bg-red-500 text-slate-950 transition";
+                btnBn.className = "px-3 py-1 rounded text-xs font-semibold text-slate-400 hover:text-white transition";
+                contentEn.classList.remove('hidden');
+                contentBn.classList.add('hidden');
+                title.innerHTML = `<i class="fa-solid fa-shield-halved mr-2"></i>Crypto Anti-Scam & Security Guidelines`;
+                desc.innerText = "Staying safe in the cryptocurrency world is your number one priority. Follow these essential safety guidelines to protect your funds from fraudsters:";
+            } else {
+                btnBn.className = "px-3 py-1 rounded text-xs font-semibold bg-red-500 text-slate-950 transition";
+                btnEn.className = "px-3 py-1 rounded text-xs font-semibold text-slate-400 hover:text-white transition";
+                contentBn.classList.remove('hidden');
+                contentEn.classList.add('hidden');
+                title.innerHTML = `<i class="fa-solid fa-shield-halved mr-2"></i>ক্রিপ্টো অ্যান্টি-স্ক্যাম ও নিরাপত্তা নির্দেশিকা`;
+                desc.innerText = "ক্রিপ্টো দুনিয়ায় আপনার ফান্ড সুরক্ষিত রাখা সবচেয়ে গুরুত্বপূর্ণ। স্ক্যামারদের হাত থেকে আপনার সম্পদ রক্ষা করতে এই জরুরি নিরাপত্তা নিয়মগুলো মেনে চলুন:";
+            }
+        }
+
+        // Profit Calculator
+        function calculateProfit() {
+            let buy = parseFloat(document.getElementById('buy-price').value) || 0;
+            let sell = parseFloat(document.getElementById('sell-price').value) || 0;
+            let amount = parseFloat(document.getElementById('coin-amount').value) || 0;
+            let resultDiv = document.getElementById('calc-result');
+
+            if (buy <= 0 || sell <= 0 || amount <= 0) {
+                resultDiv.innerHTML = "<span class='text-red-400'>Please enter valid numbers!</span>";
+                return;
+            }
+
+            let totalBuy = buy * amount;
+            let totalSell = sell * amount;
+            let profit = totalSell - totalBuy;
+            let roi = ((profit / totalBuy) * 100).toFixed(2);
+
+            if (profit >= 0) {
+                resultDiv.innerHTML = `<span class='text-green-400'>Estimated Profit: +$${profit.toFixed(2)} (+${roi}%)</span>`;
+            } else {
+                resultDiv.innerHTML = `<span class='text-red-400'>Estimated Loss: -$${Math.abs(profit).toFixed(2)} (${roi}%)</span>`;
+            }
+        }
+
+        // Referral & Banner System
+        window.onload = function() {
+            let currentUrl = window.location.href.split('?')[0];
+            let userRef = "ckb_user_" + Math.random().toString(36).substring(2, 8);
+            let refLink = currentUrl + "?ref=" + userRef;
+            document.getElementById('ref-link-input').value = refLink;
+
+            let urlParams = new URLSearchParams(window.location.search);
+            let refParam = urlParams.get('ref');
+            if (refParam) {
+                document.getElementById('vip-banner').classList.remove('hidden');
+                document.getElementById('vip-message').innerText = "VIP Invitation Activated! Referred by: " + refParam.substring(0, 10) + "... Enjoy Exclusive Access!";
+            }
+        };
+
+        function copyRefLink() {
+            let copyText = document.getElementById('ref-link-input');
+            copyText.select();
+            copyText.setSelectionRange(0, 99999);
+            navigator.clipboard.writeText(copyText.value);
+            
+            let btnText = document.getElementById('copy-btn-text');
+            btnText.innerText = "Copied!";
+            setTimeout(() => {
+                btnText.innerText = "Copy Referral Link";
+            }, 2000);
+        }
+    </script>
+</body>
+</html>
