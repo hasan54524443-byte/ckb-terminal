@@ -1,0 +1,555 @@
+<!DOCTYPE html>
+<html lang="bn" class="dark">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>CKB TERMINAL — সম্পূর্ণ বাংলা ক্রিপ্টো ও সিকিউরিটি হাব</title>
+    <!-- Tailwind CSS CDN -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script>
+        tailwind.config = {
+            darkMode: 'class',
+            theme: {
+                extend: {
+                    colors: {
+                        brand: {
+                            dark: '#0B0E14',
+                            card: '#161B26',
+                            border: '#262D3D',
+                            gold: '#F0B90B',
+                            cyan: '#06B6D4',
+                            emerald: '#10B981',
+                            rose: '#F43F5E'
+                        }
+                    },
+                    fontFamily: {
+                        sans: ['Plus Jakarta Sans', 'Inter', 'sans-serif'],
+                    }
+                }
+            }
+        }
+    </script>
+    <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+    <style>
+        body {
+            background-color: #0B0E14;
+            color: #E2E8F0;
+            font-family: 'Plus Jakarta Sans', sans-serif;
+        }
+        .glass-card {
+            background: rgba(22, 27, 38, 0.85);
+            backdrop-filter: blur(12px);
+            border: 1px solid rgba(38, 45, 61, 0.8);
+        }
+        .glass-card:hover {
+            border-color: rgba(6, 182, 212, 0.4);
+            box-shadow: 0 0 20px rgba(6, 182, 212, 0.1);
+        }
+        .gold-gradient-btn { background: linear-gradient(135deg, #F0B90B 0%, #D97706 100%); }
+        .cyan-gradient-btn { background: linear-gradient(135deg, #06B6D4 0%, #3B82F6 100%); }
+        .rose-gradient-btn { background: linear-gradient(135deg, #F43F5E 0%, #E11D48 100%); }
+        .emerald-gradient-btn { background: linear-gradient(135deg, #10B981 0%, #059669 100%); }
+        .ad-container {
+            background: rgba(22, 27, 38, 0.5);
+            border: 1px dashed rgba(6, 182, 212, 0.2);
+            border-radius: 12px;
+            padding: 10px;
+            text-align: center;
+            margin: 15px 0;
+            min-height: 90px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            overflow: hidden;
+        }
+        .nav-tab.active {
+            border-bottom: 3px solid #F0B90B;
+            color: #F0B90B;
+        }
+    </style>
+</head>
+<body class="antialiased selection:bg-cyan-500 selection:text-black min-h-screen flex flex-col justify-between">
+
+    <!-- Top Ticker Bar -->
+    <div class="bg-brand-card/90 border-b border-brand-border py-2 text-xs overflow-hidden whitespace-nowrap">
+        <div class="inline-flex space-x-8 animate-marquee font-mono text-slate-300">
+            <span>🔥 <strong class="text-brand-gold">নিরাপত্তা পোর্টাল:</strong> সম্পূর্ণ বাংলা ভাষায় চালুকৃত</span>
+            <span>⚡ <strong class="text-brand-cyan">CKB স্কয়ার:</strong> কমিউনিটি পোস্ট ও আলোচনা লাইভ</span>
+            <span>🛡️ <strong class="text-brand-emerald">সাকসেস রেট:</strong> ভেরিফাইড ট্রেডার ও স্ক্যামার ডেটাবেজ</span>
+        </div>
+    </div>
+
+    <!-- Navigation Header -->
+    <header class="sticky top-0 z-50 glass-card border-b border-brand-border px-4 lg:px-8 py-3">
+        <div class="max-w-7xl mx-auto flex flex-col md:flex-row items-center justify-between gap-4">
+            
+            <div class="flex items-center gap-3 w-full md:w-auto justify-between">
+                <div class="flex items-center gap-3">
+                    <div class="w-10 h-10 rounded-xl gold-gradient-btn flex items-center justify-center font-extrabold text-black text-xl shadow-lg">
+                        CKB
+                    </div>
+                    <div>
+                        <h1 class="text-lg font-bold tracking-tight text-white flex items-center gap-2">
+                            CKB TERMINAL <span class="text-[10px] bg-cyan-500/10 text-brand-cyan border border-cyan-500/30 px-2 py-0.5 rounded-full font-mono">বাংলা প্রো v10</span>
+                        </h1>
+                        <p class="text-[11px] text-slate-400">ক্রিপ্টো নিরাপত্তা, সোশ্যাল স্কয়ার ও ডিরেক্টরি হাব</p>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Navigation Tabs -->
+            <div class="flex space-x-2 md:space-x-4 text-xs font-bold overflow-x-auto w-full md:w-auto py-1">
+                <button id="tab-terminal-btn" onclick="switchTab('terminal')" class="nav-tab active py-1 text-white hover:text-brand-gold transition whitespace-nowrap">
+                    🖥️ টার্মিনাল ও টুলস
+                </button>
+                <button id="tab-square-btn" onclick="switchTab('square')" class="nav-tab py-1 text-slate-400 hover:text-brand-gold transition whitespace-nowrap">
+                    🟡 CKB স্কয়ার (ফিড)
+                </button>
+                <button id="tab-directory-btn" onclick="switchTab('directory')" class="nav-tab py-1 text-slate-400 hover:text-brand-gold transition whitespace-nowrap">
+                    👥 ট্রেডার ও স্ক্যামার তালিকা
+                </button>
+                <button id="tab-leaderboard-btn" onclick="switchTab('leaderboard')" class="nav-tab py-1 text-slate-400 hover:text-brand-gold transition whitespace-nowrap">
+                    🏆 রেফারেল লিডারবোর্ড
+                </button>
+            </div>
+
+            <!-- INSTANT QUICK SEARCH BAR -->
+            <div class="w-full md:w-1/4 relative">
+                <input type="text" id="searchInput" onkeyup="quickSearch()" placeholder="⚡ কুইক সার্চ (যেকোনো অক্ষর লিখুন)..." 
+                    class="w-full bg-brand-dark border border-brand-cyan/60 rounded-xl px-4 py-2 text-xs text-white focus:outline-none focus:border-brand-gold transition">
+                
+                <div id="searchSuggestions" class="absolute left-0 right-0 mt-1 bg-brand-card border border-brand-border rounded-xl shadow-2xl hidden z-50 max-h-48 overflow-y-auto text-xs">
+                </div>
+            </div>
+        </div>
+    </header>
+
+    <!-- Main Content Container -->
+    <main class="max-w-7xl mx-auto px-4 lg:px-8 py-8 space-y-8 w-full">
+
+        <!-- ================= PAGE 1: TERMINAL ================= -->
+        <div id="page-terminal" class="space-y-8">
+            <div class="ad-container">
+                <script src="https://pl31481801.profitableratecpmnetwork.com/ce/8f/2d/ce8f2d3e153dd8ff1e46ee069ef9253d.js"></script>
+            </div>
+
+            <section class="space-y-4 searchable-item" data-keywords="live chart market btc eth লাইভ মার্কেট চার্ট">
+                <div class="flex flex-col md:flex-row md:items-center justify-between gap-4 border-b border-brand-border pb-3">
+                    <div>
+                        <h2 class="text-xl font-extrabold text-white flex items-center gap-2">📈 ১. লাইভ মার্কেট চার্ট ও অ্যানালিটিক্স</h2>
+                        <p class="text-xs text-brand-cyan font-semibold mt-0.5">📌 কাজের বিবরণ: রিয়েল-টাইম ক্যান্ডেলস্টিক চার্ট দেখে টেকনিক্যাল অ্যানালাইসিস করার স্থান।</p>
+                    </div>
+                    <div class="flex flex-wrap gap-2 font-mono text-xs">
+                        <button onclick="changeChart('BINANCE:BTCUSDT')" class="px-3 py-1 rounded-lg bg-slate-800 text-brand-gold font-bold">BTC/USDT</button>
+                        <button onclick="changeChart('BINANCE:ETHUSDT')" class="px-3 py-1 rounded-lg bg-slate-800 text-brand-cyan font-bold">ETH/USDT</button>
+                    </div>
+                </div>
+                <div class="glass-card rounded-2xl p-2 h-[400px] w-full overflow-hidden">
+                    <div id="tradingview_widget" class="w-full h-full"></div>
+                </div>
+            </section>
+        </div>
+
+        <!-- ================= PAGE 2: SQUARE ================= -->
+        <div id="page-square" class="space-y-6 hidden">
+            <div class="glass-card p-6 rounded-2xl border-l-4 border-l-brand-gold searchable-item" data-keywords="square post feed community স্কয়ার ফিড পোস্ট">
+                <h2 class="text-2xl font-extrabold text-white">🟡 CKB স্কয়ার (কমিউনিটি সোশ্যাল ফিড)</h2>
+                <p class="text-xs text-brand-gold font-semibold mt-1">📌 কাজের বিবরণ: এখানে ক্রিপ্টো সিগন্যাল বা মতামত পোস্ট করুন, লাইক ও কমেন্টে রিপ্লাই দিন।</p>
+            </div>
+            
+            <div class="glass-card p-6 rounded-2xl space-y-4 searchable-item" data-keywords="create post নতুন পোস্ট square">
+                <h3 class="text-sm font-bold text-white">✍️ নতুন পোস্ট প্রকাশ করুন</h3>
+                <form id="createPostForm" onsubmit="handleCreatePost(event)" class="space-y-3">
+                    <input type="text" id="postAuthor" required placeholder="আপনার নাম / ট্রেডার আইডি" class="w-full bg-brand-dark border border-brand-border rounded-xl p-2.5 text-xs text-white">
+                    <textarea id="postContent" rows="3" required placeholder="আজকে মার্কেট সম্পর্কে আপনার কী মতামত? সিগন্যাল শেয়ার করুন..." class="w-full bg-brand-dark border border-brand-border rounded-xl p-2.5 text-xs text-white"></textarea>
+                    <button type="submit" class="gold-gradient-btn text-black font-bold text-xs px-6 py-2 rounded-xl">🚀 পোস্ট প্রকাশ করুন</button>
+                </form>
+            </div>
+            <div id="postsFeedContainer" class="space-y-4"></div>
+        </div>
+
+        <!-- ================= PAGE 3: DIRECTORY (VERIFIED TRADERS & SCAMMERS) ================= -->
+        <div id="page-directory" class="space-y-6 hidden">
+            <div class="glass-card p-6 rounded-2xl border-l-4 border-l-brand-emerald space-y-3 searchable-item" data-keywords="directory success rate scammer ডিরেক্টরি সাকসেস রেট স্ক্যামার">
+                <div class="flex flex-col md:flex-row justify-between md:items-center gap-4">
+                    <div>
+                        <h2 class="text-2xl font-extrabold text-white flex items-center gap-2">
+                            👥 ট্রেডার ও স্ক্যামার ডিরেক্টরি (সাকসেস রেট ও প্রুফ হাব)
+                        </h2>
+                        <p class="text-xs text-brand-emerald font-semibold mt-1">
+                            📌 কাজের বিবরণ: কারা বিশ্বস্ত ট্রেডার (Success Rateসহ) এবং কারা স্ক্যামার, তা ছবি ও প্রমাণসহ তালিকাভুক্ত করা রয়েছে।
+                        </p>
+                    </div>
+                    <div class="flex gap-2">
+                        <button onclick="filterProfiles('all')" class="bg-brand-dark border border-brand-border text-xs px-3 py-1.5 rounded-xl text-white">সব দেখুন</button>
+                        <button onclick="filterProfiles('verified')" class="bg-emerald-500/10 border border-emerald-500/40 text-brand-emerald text-xs px-3 py-1.5 rounded-xl">✅ ভালো ট্রেডার</button>
+                        <button onclick="filterProfiles('scammer')" class="bg-rose-500/10 border border-rose-500/40 text-brand-rose text-xs px-3 py-1.5 rounded-xl">🚨 স্ক্যামার</button>
+                    </div>
+                </div>
+            </div>
+
+            <!-- UPLOADER FORM FOR DIRECTORY -->
+            <div class="glass-card p-6 rounded-2xl border border-brand-border space-y-4 searchable-item">
+                <h3 class="text-sm font-bold text-white flex items-center gap-2">
+                    📤 নতুন প্রোফাইল বা সাকসেস/স্ক্যাম প্রুফ ছবি জমা দিন
+                </h3>
+                <form id="addProfileForm" onsubmit="handleAddProfile(event)" class="space-y-3">
+                    <div class="grid grid-cols-1 md:grid-cols-3 gap-3">
+                        <div>
+                            <label class="text-[11px] text-slate-400 block mb-1">নাম / ট্রেডার আইডি / টেলিগ্রাম</label>
+                            <input type="text" id="profName" required placeholder="যেমন: Hasan_Crypto" class="w-full bg-brand-dark border border-brand-border rounded-xl p-2 text-xs text-white">
+                        </div>
+                        <div>
+                            <label class="text-[11px] text-slate-400 block mb-1">ক্যাটাগরি সিলেক্ট করুন</label>
+                            <select id="profType" onchange="toggleSuccessInput()" class="w-full bg-brand-dark border border-brand-border rounded-xl p-2 text-xs text-brand-cyan font-bold">
+                                <option value="verified">✅ Verified Leader (ভালো ট্রেডার)</option>
+                                <option value="scammer">🚨 Blacklisted Scammer (স্ক্যামার)</option>
+                            </select>
+                        </div>
+                        <div id="successRateInputBox">
+                            <label class="text-[11px] text-slate-400 block mb-1">সাকসেস রেট Success Rate (%)</label>
+                            <input type="number" id="profSuccess" min="0" max="100" value="90" class="w-full bg-brand-dark border border-brand-border rounded-xl p-2 text-xs text-brand-gold font-bold">
+                        </div>
+                    </div>
+                    <div>
+                        <label class="text-[11px] text-slate-400 block mb-1">বিবরণ লিখুন</label>
+                        <textarea id="profDetails" rows="2" required placeholder="সিগন্যাল ইতিহাস বা স্ক্যামের বিবরণ..." class="w-full bg-brand-dark border border-brand-border rounded-xl p-2 text-xs text-white"></textarea>
+                    </div>
+                    <div>
+                        <label class="text-[11px] text-slate-400 block mb-1">🖼️ প্রুফ স্ক্রিনশট বা ছবি আপলোড করুন</label>
+                        <input type="file" id="profImage" accept="image/*" onchange="previewProofImg(event)" class="w-full text-xs text-slate-400 file:mr-3 file:py-1 file:px-3 file:rounded-xl file:border-0 file:bg-brand-emerald file:text-black font-bold cursor-pointer">
+                    </div>
+                    <div id="proofImgPreviewBox" class="hidden">
+                        <p class="text-[10px] text-slate-400 mb-1">ছবির প্রিভিউ:</p>
+                        <img id="proofImgPreview" src="#" class="max-h-36 rounded-lg border border-brand-border">
+                    </div>
+                    <div class="flex justify-end pt-2">
+                        <button type="submit" class="emerald-gradient-btn text-black font-bold text-xs px-6 py-2.5 rounded-xl shadow-lg">
+                            ✅ তালিকায় যুক্ত করুন
+                        </button>
+                    </div>
+                </form>
+            </div>
+
+            <!-- DIRECTORY GRID -->
+            <div id="directoryGrid" class="grid grid-cols-1 md:grid-cols-2 gap-4">
+                <!-- Card 1: Good User / Verified -->
+                <div class="glass-card p-5 rounded-2xl border border-brand-border space-y-3 profile-card verified searchable-item">
+                    <div class="flex justify-between items-start">
+                        <div class="flex items-center gap-3">
+                            <div class="w-10 h-10 rounded-full bg-emerald-500/20 border border-emerald-500 text-brand-emerald font-bold flex items-center justify-center text-sm">
+                                HR
+                            </div>
+                            <div>
+                                <h4 class="text-sm font-bold text-white flex items-center gap-1.5">
+                                    Hasan_Raza_Trader <span class="text-[9px] bg-emerald-500/20 text-brand-emerald border border-emerald-500/40 px-1.5 py-0.2 rounded-full font-mono">✅ VERIFIED</span>
+                                </h4>
+                                <span class="text-[10px] text-slate-400 font-mono">Leader Trader</span>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="bg-brand-dark/90 p-3 rounded-xl border border-brand-border/80 space-y-1.5">
+                        <div class="flex justify-between text-xs font-mono">
+                            <span class="text-slate-400">সাকসেস রেট (Success Rate):</span>
+                            <strong class="text-brand-emerald">৯২% সঠিক সিগন্যাল</strong>
+                        </div>
+                        <div class="w-full bg-slate-800 h-2.5 rounded-full overflow-hidden">
+                            <div class="bg-brand-emerald h-full rounded-full" style="width: 92%"></div>
+                        </div>
+                    </div>
+                    <p class="text-xs text-slate-300">স্পট ট্রেডিংয়ে নিয়মিত শতভাগ ভেরিফাইড প্রফিট সিগন্যাল দিয়ে থাকেন।</p>
+                    <div class="pt-2 border-t border-brand-border/60 flex justify-between items-center text-[10px] text-slate-400 font-mono">
+                        <span>🛡️ বিশ্বস্ত ট্রেডার</span>
+                        <span class="text-brand-cyan">ভেরিফাইড ✅</span>
+                    </div>
+                </div>
+
+                <!-- Card 2: Scammer -->
+                <div class="glass-card p-5 rounded-2xl border border-rose-500/40 space-y-3 profile-card scammer searchable-item">
+                    <div class="flex justify-between items-start">
+                        <div class="flex items-center gap-3">
+                            <div class="w-10 h-10 rounded-full bg-rose-500/20 border border-rose-500 text-brand-rose font-bold flex items-center justify-center text-sm">
+                                SC
+                            </div>
+                            <div>
+                                <h4 class="text-sm font-bold text-white flex items-center gap-1.5">
+                                    @Fake_Investment_BD <span class="text-[9px] bg-rose-500/20 text-rose-400 border border-rose-500/40 px-1.5 py-0.2 rounded-full font-mono">🚨 SCAMMER</span>
+                                </h4>
+                                <span class="text-[10px] text-slate-400 font-mono">Blacklisted ID</span>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="bg-rose-500/10 p-3 rounded-xl border border-rose-500/30 text-xs text-rose-300">
+                        ⚠️ <strong>সতর্কবার্তা:</strong> ডলার দ্বিগুণ করার প্রলোভন দেখিয়ে স্ক্যাম করেছে।
+                    </div>
+                    <p class="text-xs text-slate-300">ভুয়া স্ক্রিনশট ও পেমেন্ট স্লিপ দিয়ে সাধারণ মানুষদের সাথে প্রতারণা করে।</p>
+                    <div class="pt-2 border-t border-brand-border/60 flex justify-between items-center text-[10px] text-slate-400 font-mono">
+                        <span class="text-brand-rose">🚫 ব্লকলিস্টেড</span>
+                        <span>প্রতারক ❌</span>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- ================= PAGE 4: LEADERBOARD ================= -->
+        <div id="page-leaderboard" class="space-y-6 hidden">
+            <div class="glass-card p-6 rounded-2xl border-l-4 border-l-brand-gold space-y-2 searchable-item" data-keywords="leaderboard referral লিডারবোর্ড রেফারেল">
+                <h2 class="text-2xl font-extrabold text-white">🏆 রেফারেল লিডারবোর্ড</h2>
+                <p class="text-xs text-brand-gold font-semibold mt-1">📌 সবচেয়ে বেশি সফল রেফারেল করা প্রমোটারদের লাইভ র‍্যাংকিং তালিকা।</p>
+            </div>
+            <div class="glass-card p-6 rounded-2xl border border-brand-border space-y-4">
+                <h3 class="text-sm font-bold text-white">➕ আপনার রেফারেল সংখ্যা যুক্ত করুন</h3>
+                <form id="addReferralForm" onsubmit="handleAddReferral(event)" class="space-y-3">
+                    <div class="grid grid-cols-1 md:grid-cols-2 gap-3">
+                        <input type="text" id="refName" required placeholder="আপনার নাম / টেলিগ্রাম আইডি" class="w-full bg-brand-dark border border-brand-border rounded-xl p-2.5 text-xs text-white">
+                        <input type="number" id="refCount" min="1" required placeholder="সফল রেফারেল সংখ্যা (যেমন: ৩০)" class="w-full bg-brand-dark border border-brand-border rounded-xl p-2.5 text-xs text-white font-bold">
+                    </div>
+                    <button type="submit" class="gold-gradient-btn text-black font-bold text-xs px-6 py-2.5 rounded-xl">🏆 লিডারবোর্ডে যুক্ত হন</button>
+                </form>
+            </div>
+            <div class="glass-card rounded-2xl overflow-hidden border border-brand-border">
+                <div class="overflow-x-auto">
+                    <table class="w-full text-left text-xs font-mono">
+                        <thead class="bg-brand-dark text-slate-400 uppercase text-[10px] border-b border-brand-border">
+                            <tr>
+                                <th class="p-3.5 text-center">র‍্যাংক</th>
+                                <th class="p-3.5">প্রমোটার নাম</th>
+                                <th class="p-3.5 text-center">সফল রেফারেল</th>
+                                <th class="p-3.5 text-center">পয়েন্ট</th>
+                            </tr>
+                        </thead>
+                        <tbody id="leaderboardTableBody" class="divide-y divide-brand-border/60 text-slate-200"></tbody>
+                    </table>
+                </div>
+            </div>
+        </div>
+
+        <div class="ad-container">
+            <script src="https://pl31481803.profitableratecpmnetwork.com/34/da/15/34da15050538d0a75ab5e2326167ae7c.js"></script>
+        </div>
+
+    </main>
+
+    <footer class="glass-card border-t border-brand-border mt-12 py-6 px-4 text-center text-xs text-slate-500">
+        <p>© 2026 CKB TERMINAL — সম্পূর্ণ বাংলা ক্রিপ্টো হাব। সর্বস্বত্ব সংরক্ষিত।</p>
+    </footer>
+
+    <!-- JavaScript Engine -->
+    <script src="https://s3.tradingview.com/tv.js"></script>
+    <script>
+        function switchTab(tab) {
+            document.getElementById('page-terminal').classList.add('hidden');
+            document.getElementById('page-square').classList.add('hidden');
+            document.getElementById('page-directory').classList.add('hidden');
+            document.getElementById('page-leaderboard').classList.add('hidden');
+
+            document.getElementById('tab-terminal-btn').classList.remove('active', 'text-white');
+            document.getElementById('tab-square-btn').classList.remove('active', 'text-white');
+            document.getElementById('tab-directory-btn').classList.remove('active', 'text-white');
+            document.getElementById('tab-leaderboard-btn').classList.remove('active', 'text-white');
+
+            if(tab === 'terminal') {
+                document.getElementById('page-terminal').classList.remove('hidden');
+                document.getElementById('tab-terminal-btn').classList.add('active', 'text-white');
+            } else if(tab === 'square') {
+                document.getElementById('page-square').classList.remove('hidden');
+                document.getElementById('tab-square-btn').classList.add('active', 'text-white');
+            } else if(tab === 'directory') {
+                document.getElementById('page-directory').classList.remove('hidden');
+                document.getElementById('tab-directory-btn').classList.add('active', 'text-white');
+            } else if(tab === 'leaderboard') {
+                document.getElementById('page-leaderboard').classList.remove('hidden');
+                document.getElementById('tab-leaderboard-btn').classList.add('active', 'text-white');
+                renderLeaderboard();
+            }
+        }
+
+        function initTradingView(symbol) {
+            document.getElementById('tradingview_widget').innerHTML = '';
+            new TradingView.widget({
+                "autosize": true,
+                "symbol": symbol,
+                "interval": "60",
+                "theme": "dark",
+                "container_id": "tradingview_widget"
+            });
+        }
+        window.addEventListener('DOMContentLoaded', () => { 
+            initTradingView('BINANCE:BTCUSDT'); 
+            renderLeaderboard();
+        });
+
+        // Quick Search Engine
+        const searchKeywordsMap = [
+            { name: "লাইভ মার্কেট চার্ট ও অ্যানালিটিক্স", tab: "terminal", keyword: "chart btc live চার্ট বাজার" },
+            { name: "CKB স্কয়ার (কমিউনিটি সোশ্যাল ফিড)", tab: "square", keyword: "square post feed স্কয়ার পোস্ট" },
+            { name: "ট্রেডার ও স্ক্যামার ডিরেক্টরি", tab: "directory", keyword: "directory scammer success rate ডিরেক্টরি সাকসেস রেট" },
+            { name: "রেফারেল লিডারবোর্ড", tab: "leaderboard", keyword: "leaderboard referral লিডারবোর্ড রেফারেল" }
+        ];
+
+        function quickSearch() {
+            const inputVal = document.getElementById('searchInput').value.toLowerCase().trim();
+            const suggestBox = document.getElementById('searchSuggestions');
+            suggestBox.innerHTML = '';
+
+            if (inputVal.length === 0) {
+                suggestBox.classList.add('hidden');
+                document.querySelectorAll('.searchable-item').forEach(el => el.style.display = '');
+                return;
+            }
+
+            let matchedItems = searchKeywordsMap.filter(item => item.name.toLowerCase().includes(inputVal) || item.keyword.includes(inputVal));
+
+            if (matchedItems.length > 0) {
+                suggestBox.classList.remove('hidden');
+                matchedItems.forEach(match => {
+                    const div = document.createElement('div');
+                    div.className = 'p-2.5 hover:bg-brand-dark cursor-pointer text-slate-200 border-b border-brand-border/40 transition';
+                    div.innerHTML = `⚡ <strong>${match.name}</strong>`;
+                    div.onclick = () => {
+                        switchTab(match.tab);
+                        document.getElementById('searchInput').value = match.name;
+                        suggestBox.classList.add('hidden');
+                    };
+                    suggestBox.appendChild(div);
+                });
+            } else {
+                suggestBox.classList.remove('hidden');
+                suggestBox.innerHTML = `<div class="p-2.5 text-slate-400 text-center">কোনো তথ্য পাওয়া যায়নি</div>`;
+            }
+
+            document.querySelectorAll('.searchable-item').forEach(item => {
+                const text = (item.innerText + " " + item.getAttribute('data-keywords')).toLowerCase();
+                item.style.display = text.includes(inputVal) ? '' : 'none';
+            });
+        }
+
+        // Directory Profile & Proof Uploader Logic
+        let currentProofImgData = null;
+        function previewProofImg(event) {
+            const reader = new FileReader();
+            reader.onload = function() {
+                document.getElementById('proofImgPreview').src = reader.result;
+                document.getElementById('proofImgPreviewBox').classList.remove('hidden');
+                currentProofImgData = reader.result;
+            };
+            if(event.target.files[0]) reader.readAsDataURL(event.target.files[0]);
+        }
+
+        function toggleSuccessInput() {
+            const type = document.getElementById('profType').value;
+            const box = document.getElementById('successRateInputBox');
+            box.style.display = (type === 'scammer') ? 'none' : 'block';
+        }
+
+        function handleAddProfile(e) {
+            e.preventDefault();
+            const name = document.getElementById('profName').value;
+            const type = document.getElementById('profType').value;
+            const successRate = document.getElementById('profSuccess').value || 85;
+            const details = document.getElementById('profDetails').value;
+            const grid = document.getElementById('directoryGrid');
+
+            const isVerified = type === 'verified';
+            const badgeClass = isVerified ? 'bg-emerald-500/20 text-brand-emerald border-emerald-500/40' : 'bg-rose-500/20 text-brand-rose border-rose-500/40';
+            const badgeText = isVerified ? '✅ VERIFIED' : '🚨 SCAMMER';
+            const borderStyle = isVerified ? 'border-brand-border' : 'border-rose-500/40';
+
+            let rateBox = isVerified ? `
+                <div class="bg-brand-dark/90 p-3 rounded-xl border border-brand-border/80 space-y-1.5">
+                    <div class="flex justify-between text-xs font-mono">
+                        <span class="text-slate-400">সাকসেস রেট (Success Rate):</span>
+                        <strong class="text-brand-emerald">${successRate}% সঠিক সিগন্যাল</strong>
+                    </div>
+                    <div class="w-full bg-slate-800 h-2.5 rounded-full overflow-hidden">
+                        <div class="bg-brand-emerald h-full rounded-full" style="width: ${successRate}%"></div>
+                    </div>
+                </div>
+            ` : `
+                <div class="bg-rose-500/10 p-3 rounded-xl border border-rose-500/30 text-xs text-rose-300">
+                    ⚠️ <strong>স্ক্যাম সতর্কবার্তা:</strong> প্রমাণিত প্রতারক
+                </div>
+            `;
+
+            const cardHtml = `
+                <div class="glass-card p-5 rounded-2xl border ${borderStyle} space-y-3 profile-card ${type} searchable-item">
+                    <div class="flex justify-between items-start">
+                        <div class="flex items-center gap-3">
+                            <div class="w-10 h-10 rounded-full ${isVerified ? 'bg-emerald-500/25 border-emerald-500 text-brand-emerald' : 'bg-rose-500/25 border-rose-500 text-brand-rose'} border font-bold flex items-center justify-center text-sm">
+                                ${name.substring(0,2).toUpperCase()}
+                            </div>
+                            <div>
+                                <h4 class="text-sm font-bold text-white flex items-center gap-1.5">
+                                    ${name} <span class="text-[9px] ${badgeClass} border px-1.5 py-0.2 rounded-full font-mono">${badgeText}</span>
+                                </h4>
+                                <span class="text-[10px] text-slate-400 font-mono">ইউজার প্রোফাইল</span>
+                            </div>
+                        </div>
+                    </div>
+                    ${rateBox}
+                    <p class="text-xs text-slate-300">${details}</p>
+                    ${currentProofImgData ? `<div class="mt-2"><p class="text-[10px] text-slate-400 mb-1">প্রুফ ছবি:</p><img src="${currentProofImgData}" class="max-h-48 rounded-xl border border-brand-border"></div>` : ''}
+                    <div class="pt-2 border-t border-brand-border/60 flex justify-between items-center text-[10px] text-slate-400 font-mono">
+                        <span>সদ্য যোগকৃত</span>
+                        <span>ভেরিফাইড</span>
+                    </div>
+                </div>
+            `;
+
+            grid.insertAdjacentHTML('afterbegin', cardHtml);
+            document.getElementById('addProfileForm').reset();
+            document.getElementById('proofImgPreviewBox').classList.add('hidden');
+            currentProofImgData = null;
+            alert('সফলভাবে ডিরেক্টরিতে যুক্ত করা হয়েছে!');
+        }
+
+        function filterProfiles(filter) {
+            document.querySelectorAll('.profile-card').forEach(card => {
+                if(filter === 'all' || card.classList.contains(filter)) card.style.display = '';
+                else card.style.display = 'none';
+            });
+        }
+
+        // Leaderboard Logic
+        let leaderboardData = [
+            { name: "Ashraful_Islam", count: 120, points: 1200 },
+            { name: "Rakibul_Crypto", count: 95, points: 950 },
+            { name: "Mehedi_Trader", count: 74, points: 740 }
+        ];
+
+        function renderLeaderboard() {
+            leaderboardData.sort((a, b) => b.count - a.count);
+            const tbody = document.getElementById('leaderboardTableBody');
+            tbody.innerHTML = '';
+            leaderboardData.forEach((item, index) => {
+                let badge = index === 0 ? '🥇 ১ম' : (index === 1 ? '🥈 ২য়' : (index === 2 ? '🥉 ৩য়' : `#${index+1}`));
+                tbody.insertAdjacentHTML('beforeend', `
+                    <tr class="hover:bg-brand-card/50 transition">
+                        <td class="p-3.5 text-center font-bold text-brand-gold">${badge}</td>
+                        <td class="p-3.5 font-bold text-white">${item.name}</td>
+                        <td class="p-3.5 text-center text-brand-cyan">${item.count} জন</td>
+                        <td class="p-3.5 text-center text-brand-emerald font-bold">${item.points} PTS</td>
+                    </tr>
+                `);
+            });
+        }
+
+        function handleAddReferral(e) {
+            e.preventDefault();
+            const name = document.getElementById('refName').value.trim();
+            const count = parseInt(document.getElementById('refCount').value);
+            if(!name || isNaN(count)) return;
+            leaderboardData.push({ name, count, points: count * 10 });
+            document.getElementById('addReferralForm').reset();
+            renderLeaderboard();
+            alert('লিডারবোর্ডে সফলভাবে আপনার নাম যুক্ত হয়েছে!');
+        }
+
+        window.onclick = function(event) {
+            if (!event.target.closest('#searchInput') && !event.target.closest('#searchSuggestions')) {
+                document.getElementById('searchSuggestions').classList.add('hidden');
+            }
+        };
+    </script>
+</body>
+</html>
