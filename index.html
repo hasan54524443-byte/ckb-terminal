@@ -1,0 +1,251 @@
+<!DOCTYPE html>
+<html lang="en" class="dark">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>CKB TERMINAL – Automated Crypto Market Data, Analytics & Trading Masterclass</title>
+    
+    <!-- SEO Meta Tags -->
+    <meta name="description" content="CKB Terminal is your automated crypto dashboard featuring live market data, fear & greed index, profit calculator, anti-scam security guidelines, and trading masterclass.">
+    <meta name="keywords" content="crypto live data, bitcoin price, crypto safety guide, ckb terminal, crypto calculator, trading masterclass, adsterra crypto">
+    <meta name="robots" content="index, follow">
+
+    <!-- Tailwind CSS CDN -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    <!-- FontAwesome Icons -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <!-- Google Fonts -->
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+
+    <!-- Adsterra Banner Code (60x300) -->
+    <script>
+        atOptions = {
+            'key' : '23c891e286a6f2784b6dfa8def1e18a6',
+            'format' : 'iframe',
+            'height' : 300,
+            'width' : 160,
+            'params' : {}
+        };
+    </script>
+    <script type="text/javascript" src="//www.highrevenueformat.com/23c891e286a6f2784b6dfa8def1e18a6/invoke.js"></script>
+
+    <!-- Adsterra Social Bar Code 1 -->
+    <script src="https://pl31481801.profitableratecpmnetwork.com/ce/8f/2d/ce8f2d3e153dd8ff1e46ee069ef9253d.js"></script>
+
+    <style>
+        body { font-family: 'Inter', sans-serif; }
+    </style>
+</head>
+<body class="bg-slate-950 text-slate-100 min-h-screen flex flex-col justify-between">
+
+    <!-- Top Notification / VIP Referral Banner -->
+    <div id="vip-banner" class="bg-gradient-to-r from-amber-600 via-yellow-500 to-amber-600 text-slate-950 px-4 py-2 text-center text-sm font-semibold hidden">
+        🎉 <span id="vip-message">Welcome via Special Invitation! Enjoy Elite Access to CKB Terminal.</span>
+    </div>
+
+    <!-- Header / Navigation -->
+    <header class="border-b border-slate-800 bg-slate-900/60 backdrop-blur sticky top-0 z-50">
+        <div class="max-w-7xl mx-auto px-4 py-3 flex justify-between items-center">
+            <div class="flex items-center space-x-2">
+                <i class="fa-solid fa-terminal text-yellow-400 text-xl"></i>
+                <span class="text-lg font-bold tracking-wider">CKB <span class="text-yellow-400">TERMINAL</span></span>
+            </div>
+            <div class="flex items-center space-x-3">
+                <!-- Telegram Channel Button (আপনার টেলিগ্রাম লিংক এখানে বসিয়ে দিন) -->
+                <a href="https://t.me/YOUR_TELEGRAM_USERNAME" target="_blank" class="bg-sky-600 hover:bg-sky-500 text-white px-3 py-1.5 rounded-lg text-sm font-medium transition flex items-center space-x-1.5">
+                    <i class="fa-brands fa-telegram"></i>
+                    <span>Telegram Community</span>
+                </a>
+            </div>
+        </div>
+    </header>
+
+    <!-- Main Content Area -->
+    <main class="max-w-7xl mx-auto px-4 py-6 w-full space-y-8">
+
+        <!-- Live Crypto Ticker Bar (CoinGecko Free Widget) -->
+        <section class="bg-slate-900 border border-slate-800 rounded-xl p-4 shadow-lg">
+            <h2 class="text-sm font-semibold text-slate-400 uppercase tracking-wider mb-3"><i class="fa-solid fa-chart-line text-yellow-400 mr-2"></i>Live Market Ticker</h2>
+            <div class="w-full overflow-x-auto">
+                <script src="https://widgets.coingecko.com/coingecko-coin-price-marquee-widget.js"></script>
+                <coingecko-coin-price-marquee-widget coin-ids="bitcoin,ethereum,solana,binancecoin,pepe" currency="usd" background-color="#090d16" locale="en" font-color="#ffffff"></coingecko-coin-price-marquee-widget>
+            </div>
+        </section>
+
+        <!-- Dashboard Grid (Widgets & Calculator) -->
+        <div class="grid grid-cols-1 md:grid-cols-3 gap-6">
+            
+            <!-- Fear & Greed Index -->
+            <div class="bg-slate-900 border border-slate-800 rounded-xl p-5 shadow-lg flex flex-col justify-between">
+                <div>
+                    <h3 class="text-md font-bold text-yellow-400 mb-2"><i class="fa-solid fa-gauge-high mr-2"></i>Market Sentiment</h3>
+                    <p class="text-xs text-slate-400 mb-4">Daily Crypto Fear & Greed Index showing overall market emotion.</p>
+                </div>
+                <div class="flex justify-center items-center my-auto">
+                    <iframe src="https://alternative.me/crypto/fear-and-greed-index/" style="width: 100%; height: 260px; border: none; background: transparent;" title="Crypto Fear and Greed Index"></iframe>
+                </div>
+            </div>
+
+            <!-- Quick Profit Calculator -->
+            <div class="bg-slate-900 border border-slate-800 rounded-xl p-5 shadow-lg flex flex-col justify-between">
+                <div>
+                    <h3 class="text-md font-bold text-yellow-400 mb-2"><i class="fa-solid fa-calculator mr-2"></i>Crypto Profit Calculator</h3>
+                    <p class="text-xs text-slate-400 mb-3">Quickly estimate your trade returns.</p>
+                </div>
+                <div class="space-y-3">
+                    <div>
+                        <label class="text-xs text-slate-400">Buy Price ($)</label>
+                        <input type="number" id="buy-price" placeholder="e.g. 0.50" class="w-full bg-slate-950 border border-slate-800 rounded px-3 py-1.5 text-sm text-white focus:outline-none focus:border-yellow-400">
+                    </div>
+                    <div>
+                        <label class="text-xs text-slate-400">Sell Price ($)</label>
+                        <input type="number" id="sell-price" placeholder="e.g. 0.75" class="w-full bg-slate-950 border border-slate-800 rounded px-3 py-1.5 text-sm text-white focus:outline-none focus:border-yellow-400">
+                    </div>
+                    <div>
+                        <label class="text-xs text-slate-400">Amount / Coins</label>
+                        <input type="number" id="coin-amount" placeholder="e.g. 1000" class="w-full bg-slate-950 border border-slate-800 rounded px-3 py-1.5 text-sm text-white focus:outline-none focus:border-yellow-400">
+                    </div>
+                    <button onclick="calculateProfit()" class="w-full bg-yellow-500 hover:bg-yellow-400 text-slate-950 font-bold py-1.5 rounded text-sm transition">Calculate</button>
+                    <div id="calc-result" class="text-center text-sm font-semibold text-green-400 mt-2"></div>
+                </div>
+            </div>
+
+            <!-- Referral Share Box -->
+            <div class="bg-slate-900 border border-slate-800 rounded-xl p-5 shadow-lg flex flex-col justify-between">
+                <div>
+                    <h3 class="text-md font-bold text-yellow-400 mb-2"><i class="fa-solid fa-share-nodes mr-2"></i>Invite Friends & Earn</h3>
+                    <p class="text-xs text-slate-400 mb-4">Share CKB Terminal with your friends using your unique referral link.</p>
+                </div>
+                <div class="space-y-3">
+                    <input type="text" id="ref-link-input" readonly class="w-full bg-slate-950 border border-slate-800 rounded px-3 py-2 text-xs text-slate-300 select-all" value="">
+                    <button onclick="copyRefLink()" class="w-full bg-sky-600 hover:bg-sky-500 text-white font-medium py-2 rounded text-sm transition flex items-center justify-center space-x-2">
+                        <i class="fa-solid fa-copy"></i>
+                        <span id="copy-btn-text">Copy Referral Link</span>
+                    </button>
+                </div>
+            </div>
+
+        </div>
+
+        <!-- Beginner Trading & Analysis Masterclass Section -->
+        <section class="bg-slate-900 border border-slate-800 rounded-xl p-6 shadow-lg space-y-6">
+            <h2 class="text-lg font-bold text-yellow-400 flex items-center">
+                <i class="fa-solid fa-graduation-cap mr-2"></i>Crypto Trading & Analysis Masterclass for Beginners
+            </h2>
+            <p class="text-sm text-slate-300">New to crypto trading? Follow this automated blueprint covering fund management, fundamental & technical analysis, and strategic entry-exit execution.</p>
+            
+            <div class="grid grid-cols-1 md:grid-cols-2 gap-6 pt-2">
+                <!-- Step 1 -->
+                <div class="bg-slate-950/60 p-4 rounded-lg border border-slate-800/80 space-y-2">
+                    <h3 class="text-sm font-semibold text-yellow-400"><i class="fa-solid fa-wallet text-sky-400 mr-2"></i>1. Capital & Risk Management</h3>
+                    <p class="text-xs text-slate-400">Never invest all your funds into a single asset. Split your total portfolio into 3-4 parts. Risk only 2-5% of your total capital per trade to safeguard against severe market corrections.</p>
+                </div>
+                <!-- Step 2 -->
+                <div class="bg-slate-950/60 p-4 rounded-lg border border-slate-800/80 space-y-2">
+                    <h3 class="text-sm font-semibold text-yellow-400"><i class="fa-solid fa-magnifying-glass-chart text-sky-400 mr-2"></i>2. Fundamental & Technical Analysis</h3>
+                    <p class="text-xs text-slate-400">Evaluate project utility, team credibility, and circulating supply limits (Fundamental). Use support/resistance levels and indicators like RSI on charts to time your entries (Technical).</p>
+                </div>
+                <!-- Step 3 -->
+                <div class="bg-slate-950/60 p-4 rounded-lg border border-slate-800/80 space-y-2">
+                    <h3 class="text-sm font-semibold text-yellow-400"><i class="fa-solid fa-arrow-trend-up text-green-400 mr-2"></i>3. When to BUY & SELL</h3>
+                    <p class="text-xs text-slate-400"><strong>Buy:</strong> During high-fear market dips and strong support zones using Dollar-Cost Averaging (DCA). <br><strong>Sell:</strong> Take partial profits at resistance targets instead of waiting for absolute peaks.</p>
+                </div>
+                <!-- Step 4 -->
+                <div class="bg-slate-950/60 p-4 rounded-lg border border-slate-800/80 space-y-2">
+                    <h3 class="text-sm font-semibold text-yellow-400"><i class="fa-solid fa-shield-cat text-green-400 mr-2"></i>4. Spot Trading Best Practices</h3>
+                    <p class="text-xs text-slate-400">Stick strictly to secure Spot Trading as a beginner. Avoid high-risk leverage or futures trading until you master market volatility and emotion control.</p>
+                </div>
+            </div>
+        </section>
+
+        <!-- Anti-Scam & Security Guidelines Section -->
+        <section class="bg-slate-900 border border-slate-800 rounded-xl p-6 shadow-lg space-y-4">
+            <h2 class="text-lg font-bold text-red-400 flex items-center">
+                <i class="fa-solid fa-shield-halved mr-2"></i>Crypto Anti-Scam & Security Guidelines
+            </h2>
+            <p class="text-sm text-slate-300">Staying safe in the cryptocurrency world is your number one priority. Follow these essential safety guidelines to protect your funds from fraudsters:</p>
+            
+            <div class="grid grid-cols-1 md:grid-cols-2 gap-4 pt-2">
+                <div class="bg-slate-950/60 p-4 rounded-lg border border-slate-800/80">
+                    <h3 class="text-sm font-semibold text-yellow-400 mb-1"><i class="fa-solid fa-key text-red-400 mr-2"></i>1. Never Share Private Keys</h3>
+                    <p class="text-xs text-slate-400">Your 12 or 24-word recovery phrase gives full control of your wallet. No official platform or admin will ever ask for them.</p>
+                </div>
+                <div class="bg-slate-950/60 p-4 rounded-lg border border-slate-800/80">
+                    <h3 class="text-sm font-semibold text-yellow-400 mb-1"><i class="fa-solid fa-link text-red-400 mr-2"></i>2. Beware of Phishing Links</h3>
+                    <p class="text-xs text-slate-400">Always check URLs before connecting Web3 wallets. Scammers create duplicate domains mimicking popular platforms.</p>
+                </div>
+                <div class="bg-slate-950/60 p-4 rounded-lg border border-slate-800/80">
+                    <h3 class="text-sm font-semibold text-yellow-400 mb-1"><i class="fa-solid fa-triangle-exclamation text-red-400 mr-2"></i>3. Avoid Fake High-Yield Offers</h3>
+                    <p class="text-xs text-slate-400">Be skeptical of double-your-crypto scams, guaranteed daily returns, or random airdrop DMs promising free fortunes.</p>
+                </div>
+                <div class="bg-slate-950/60 p-4 rounded-lg border border-slate-800/80">
+                    <h3 class="text-sm font-semibold text-yellow-400 mb-1"><i class="fa-solid fa-vault text-red-400 mr-2"></i>4. Use Secure Wallets</h3>
+                    <p class="text-xs text-slate-400">Store significant long-term crypto assets in secure hardware wallets rather than leaving funds on exchange hot wallets.</p>
+                </div>
+            </div>
+        </section>
+
+    </main>
+
+    <!-- Footer -->
+    <footer class="border-t border-slate-800 bg-slate-900/60 py-4 mt-8 text-center text-xs text-slate-500">
+        <p>&copy; 2026 CKB TERMINAL. All rights reserved. Automated Live Crypto Analytics & Masterclass.</p>
+    </footer>
+
+    <!-- Adsterra Popunder Code -->
+    <script src="https://pl31481803.profitableratecpmnetwork.com/34/da/15/34da15050538d0a75ab5e2326167ae7c.js"></script>
+
+    <!-- JavaScript for Calculator & Referral System -->
+    <script>
+        function calculateProfit() {
+            let buy = parseFloat(document.getElementById('buy-price').value) || 0;
+            let sell = parseFloat(document.getElementById('sell-price').value) || 0;
+            let amount = parseFloat(document.getElementById('coin-amount').value) || 0;
+            let resultDiv = document.getElementById('calc-result');
+
+            if (buy <= 0 || sell <= 0 || amount <= 0) {
+                resultDiv.innerHTML = "<span class='text-red-400'>Please enter valid numbers!</span>";
+                return;
+            }
+
+            let totalBuy = buy * amount;
+            let totalSell = sell * amount;
+            let profit = totalSell - totalBuy;
+            let roi = ((profit / totalBuy) * 100).toFixed(2);
+
+            if (profit >= 0) {
+                resultDiv.innerHTML = `<span class='text-green-400'>Estimated Profit: +$${profit.toFixed(2)} (+${roi}%)</span>`;
+            } else {
+                resultDiv.innerHTML = `<span class='text-red-400'>Estimated Loss: -$${Math.abs(profit).toFixed(2)} (${roi}%)</span>`;
+            }
+        }
+
+        window.onload = function() {
+            let currentUrl = window.location.href.split('?')[0];
+            let userRef = "ckb_user_" + Math.random().toString(36).substring(2, 8);
+            let refLink = currentUrl + "?ref=" + userRef;
+            document.getElementById('ref-link-input').value = refLink;
+
+            let urlParams = new URLSearchParams(window.location.search);
+            let refParam = urlParams.get('ref');
+            if (refParam) {
+                document.getElementById('vip-banner').classList.remove('hidden');
+                document.getElementById('vip-message').innerText = "VIP Invitation Activated! Referred by: " + refParam.substring(0, 10) + "... Enjoy Exclusive Access!";
+            }
+        };
+
+        function copyRefLink() {
+            let copyText = document.getElementById('ref-link-input');
+            copyText.select();
+            copyText.setSelectionRange(0, 99999);
+            navigator.clipboard.writeText(copyText.value);
+            
+            let btnText = document.getElementById('copy-btn-text');
+            btnText.innerText = "Copied!";
+            setTimeout(() => {
+                btnText.innerText = "Copy Referral Link";
+            }, 2000);
+        }
+    </script>
+</body>
+</html>
