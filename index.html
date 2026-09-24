@@ -1,0 +1,658 @@
+<!DOCTYPE html>
+<html lang="bn" class="dark">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>CKB TERMINAL — Ultimate Crypto & Safety Hub</title>
+    <!-- Tailwind CSS CDN -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script>
+        tailwind.config = {
+            darkMode: 'class',
+            theme: {
+                extend: {
+                    colors: {
+                        brand: {
+                            dark: '#0B0E14',
+                            card: '#161B26',
+                            border: '#262D3D',
+                            gold: '#F0B90B',
+                            cyan: '#06B6D4',
+                            emerald: '#10B981',
+                            rose: '#F43F5E'
+                        }
+                    },
+                    fontFamily: {
+                        sans: ['Plus Jakarta Sans', 'Inter', 'sans-serif'],
+                    }
+                }
+            }
+        }
+    </script>
+    <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+    <style>
+        body {
+            background-color: #0B0E14;
+            color: #E2E8F0;
+            font-family: 'Plus Jakarta Sans', sans-serif;
+        }
+        .glass-card {
+            background: rgba(22, 27, 38, 0.85);
+            backdrop-filter: blur(12px);
+            border: 1px solid rgba(38, 45, 61, 0.8);
+            border-radius: 1rem;
+            padding: 1.5rem;
+            margin-bottom: 1.5rem;
+        }
+        .sub-box {
+            background-color: #0B0E14;
+            border: 1px solid #262D3D;
+            border-radius: 0.75rem;
+            padding: 1.25rem;
+            transition: all 0.3s ease;
+        }
+        .sub-box:hover {
+            border-color: rgba(6, 182, 212, 0.4);
+        }
+        .gold-gradient-btn { background: linear-gradient(135deg, #F0B90B 0%, #D97706 100%); }
+        .cyan-gradient-btn { background: linear-gradient(135deg, #06B6D4 0%, #3B82F6 100%); }
+        .rose-gradient-btn { background: linear-gradient(135deg, #F43F5E 0%, #E11D48 100%); }
+        .ad-container {
+            background: rgba(22, 27, 38, 0.5);
+            border: 1px dashed rgba(6, 182, 212, 0.3);
+            border-radius: 1rem;
+            padding: 12px;
+            text-align: center;
+            margin: 20px 0;
+            min-height: 90px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            overflow: hidden;
+        }
+    </style>
+</head>
+<body class="antialiased selection:bg-cyan-500 selection:text-black min-h-screen flex flex-col justify-between">
+
+    <!-- Top Ticker Bar -->
+    <div class="bg-brand-card/90 border-b border-brand-border py-2 text-xs overflow-hidden whitespace-nowrap">
+        <div class="inline-flex space-x-8 animate-marquee font-mono text-slate-300">
+            <span>🔥 <strong class="text-brand-gold" id="t-tick1">CKB TERMINAL: ১০০% সুরক্ষিত ক্রিপ্টো ও সিকিউরিটি হাব</strong></span>
+            <span>⚡ <strong class="text-brand-cyan" id="t-tick2">নতুন কয়েন লিস্টিং ও ইভেন্ট নোটিফিকেশন সিস্টেম সক্রিয়</strong></span>
+        </div>
+    </div>
+
+    <!-- Navigation Header -->
+    <header class="sticky top-0 z-50 glass-card border-b border-brand-border px-4 lg:px-8 py-3 m-0 rounded-none cursor-default">
+        <div class="max-w-7xl mx-auto flex flex-col md:flex-row items-center justify-between gap-4">
+            
+            <div class="flex items-center gap-3 w-full md:w-auto justify-between">
+                <div class="flex items-center gap-3">
+                    <div class="w-10 h-10 rounded-xl gold-gradient-btn flex items-center justify-center font-extrabold text-black text-xl shadow-lg">
+                        CKB
+                    </div>
+                    <div>
+                        <h1 class="text-lg font-bold tracking-tight text-white flex items-center gap-2">
+                            CKB TERMINAL <span class="text-[10px] bg-cyan-500/10 text-brand-cyan border border-cyan-500/30 px-2 py-0.5 rounded-full font-mono">PRO v13</span>
+                        </h1>
+                        <p class="text-[11px] text-slate-400" id="hdr-sub">ক্রিপ্টো নিরাপত্তা ও লাইভ অ্যালার্ট হাব</p>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Language Toggle & Search -->
+            <div class="flex items-center gap-3 w-full md:w-auto justify-end">
+                <button onclick="toggleLanguage()" class="px-3 py-1.5 rounded-xl border border-brand-border text-xs font-bold bg-brand-dark hover:bg-slate-800 transition text-brand-gold">
+                    🌐 <span id="lang-btn-text">English</span>
+                </button>
+                <input type="text" id="searchInput" onkeyup="quickSearch()" placeholder="🔍 কুইক সার্চ..." 
+                    class="bg-brand-dark border border-brand-border rounded-xl px-3 py-1.5 text-xs text-white focus:outline-none focus:border-brand-cyan">
+            </div>
+        </div>
+    </header>
+
+    <!-- Main Container -->
+    <main class="max-w-7xl mx-auto px-4 lg:px-8 py-8 space-y-8 w-full">
+
+        <!-- ==================== AD 1: TOP BANNER AD ==================== -->
+        <div class="ad-container">
+            <script src="https://pl31481801.profitableratecpmnetwork.com/ce/8f/2d/ce8f2d3e153dd8ff1e46ee069ef9253d.js"></script>
+        </div>
+
+        <!-- ==================== NEW: BIG FEATURE BOX FOR LIVE COIN LISTINGS & EVENTS ALERTS ==================== -->
+        <div class="glass-card border-l-4 border-l-brand-gold space-y-6 cursor-default shadow-2xl">
+            <div class="flex flex-col md:flex-row justify-between md:items-center gap-4 border-b border-brand-border pb-4">
+                <div>
+                    <h2 class="text-xl font-extrabold text-white flex items-center gap-2">
+                        <span class="w-3 h-3 rounded-full bg-brand-gold animate-ping"></span>
+                        <span id="listing-box-title">🚀 লাইভ কয়েন লিস্টিং ও ইভেন্ট নোটিফিকেশন অ্যালার্ট (New Listings & Events)</span>
+                    </h2>
+                    <p class="text-xs text-slate-400 mt-1" id="listing-box-sub">বড় বড় এক্সচেঞ্জ (Binance, Bybit) নতুন কয়েন লিস্টিং ও গুরুত্বপূর্ণ ক্রিপ্টো ইভেন্টের ইনস্ট্যান্ট আপডেট এখানে সংরক্ষিত হয়।</p>
+                </div>
+                <span class="text-xs bg-amber-500/20 text-brand-gold px-3 py-1.5 rounded-xl border border-amber-500/40 font-mono animate-pulse">
+                    🔔 নোটিফিকেশন লাইভ অন
+                </span>
+            </div>
+
+            <div class="grid grid-cols-1 md:grid-cols-2 gap-4">
+                <!-- Listing Item 1 -->
+                <div class="sub-box space-y-2 border-l-2 border-l-brand-emerald">
+                    <div class="flex justify-between items-center text-[10px] font-mono text-slate-400">
+                        <span class="bg-emerald-500/20 text-emerald-300 px-2 py-0.5 rounded">Binance New Listing</span>
+                        <span>১০ মিনিট আগে</span>
+                    </div>
+                    <h4 class="text-sm font-bold text-white">🔥 Token: XYZ (Spot Trading Enabled)</h4>
+                    <p class="text-xs text-slate-300">বাইন্যান্স নতুন XYZ টোকেন স্পট মার্কেটে লিস্টিং করেছে। ট্রেডিং পেয়ার: XYZ/USDT।</p>
+                </div>
+
+                <!-- Listing Item 2 -->
+                <div class="sub-box space-y-2 border-l-2 border-l-brand-cyan">
+                    <div class="flex justify-between items-center text-[10px] font-mono text-slate-400">
+                        <span class="bg-cyan-500/20 text-cyan-300 px-2 py-0.5 rounded">Major Event Alert</span>
+                        <span>আজ প্রকাশিত</span>
+                    </div>
+                    <h4 class="text-sm font-bold text-white">⚡ Solana Network Major Upgrade & Airdrop Snapshot</h4>
+                    <p class="text-xs text-slate-300">সোলানা নেটওয়ার্কের নতুন আপডেট এবং ইকোসিস্টেম স্ন্যাপশট সম্পর্কিত বিশেষ ঘোষণা।</p>
+                </div>
+            </div>
+        </div>
+
+        <!-- TELEGRAM & BINANCE PROMO BOXES -->
+        <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
+            <div class="glass-card border-l-4 border-l-brand-cyan space-y-4 cursor-default">
+                <div class="flex items-center gap-3">
+                    <div class="text-3xl">📢</div>
+                    <div>
+                        <h3 class="text-lg font-bold text-white" id="tg-title">অফিশিয়াল টেলিগ্রাম চ্যানেল</h3>
+                        <p class="text-xs text-slate-400" id="tg-desc">প্রতিদিনের বাইন্যান্স WODL পাজল ও কুইজের সঠিক উত্তর পেতে যুক্ত হন।</p>
+                    </div>
+                </div>
+                <a href="https://t.me/YOUR_TELEGRAM_CHANNEL_LINK" target="_blank" class="w-full cyan-gradient-btn text-white font-bold py-2.5 px-4 rounded-xl text-xs flex items-center justify-center gap-2 shadow-lg">
+                    <span id="tg-btn">টেলিগ্রাম চ্যানেলে জয়েন করুন ➔</span>
+                </a>
+            </div>
+
+            <div class="glass-card border-l-4 border-l-brand-gold space-y-4 cursor-default">
+                <div class="flex items-center gap-3">
+                    <div class="text-3xl">🎁</div>
+                    <div>
+                        <h3 class="text-lg font-bold text-white" id="bn-title">বাইন্যান্স অফিশিয়াল অ্যাকাউন্ট</h3>
+                        <p class="text-xs text-slate-400" id="bn-desc">নিরাপদে ক্রিপ্টো ট্রেড করতে আমাদের রেফারেল লিংক দিয়ে অ্যাকাউন্ট খুলুন।</p>
+                    </div>
+                </div>
+                <a href="https://accounts.binance.com/register?ref=YOUR_REFERRAL_ID" target="_blank" class="w-full gold-gradient-btn text-black font-bold py-2.5 px-4 rounded-xl text-xs flex items-center justify-center gap-2 shadow-lg">
+                    <span id="bn-btn">বাইন্যান্সে জয়েন করুন ➔</span>
+                </a>
+            </div>
+        </div>
+
+        <!-- ==================== CHART & SIDEBAR FEED SECTION ==================== -->
+        <div class="grid grid-cols-1 lg:grid-cols-3 gap-6">
+            <!-- Chart Box (2 Columns) -->
+            <div class="lg:col-span-2 glass-card space-y-4 cursor-default searchable-item" data-keywords="chart live btc চার্ট মার্কেট">
+                <div class="flex flex-col md:flex-row justify-between md:items-center gap-4 border-b border-brand-border pb-4">
+                    <div>
+                        <h2 class="text-lg font-extrabold text-white flex items-center gap-2">
+                            <span class="w-3 h-3 rounded-full bg-brand-emerald animate-pulse"></span>
+                            <span id="chart-main-title">📈 লাইভ মার্কেট অ্যানালিটিক্স ও চার্ট</span>
+                        </h2>
+                        <p class="text-xs text-slate-400 mt-1" id="chart-main-desc">রিয়েল-টাইম ক্যান্ডেলস্টিক চার্ট ও টেকনিক্যাল অ্যানালাইসিস।</p>
+                    </div>
+                    <div class="flex gap-2 font-mono text-xs">
+                        <button onclick="changeChart('BINANCE:BTCUSDT')" class="px-3 py-1.5 rounded-lg bg-slate-800 border border-slate-700 text-brand-gold font-bold">BTC</button>
+                        <button onclick="changeChart('BINANCE:ETHUSDT')" class="px-3 py-1.5 rounded-lg bg-slate-800 border border-slate-700 text-brand-cyan font-bold">ETH</button>
+                    </div>
+                </div>
+                <div class="sub-box p-2 h-[380px] w-full overflow-hidden">
+                    <div id="tradingview_widget" class="w-full h-full"></div>
+                </div>
+            </div>
+
+            <!-- Right-Side Community Feed Box with Circular Avatars -->
+            <div class="glass-card border-l-4 border-l-brand-gold space-y-4 cursor-default flex flex-col justify-between">
+                <div>
+                    <div class="flex items-center justify-between border-b border-brand-border pb-3">
+                        <h3 class="text-sm font-bold text-white flex items-center gap-2">
+                            🟡 <span id="feed-box-title">CKB Pulse (কমিউনিটি ফিড)</span>
+                        </h3>
+                        <span class="text-[10px] bg-amber-500/10 text-brand-gold border border-amber-500/30 px-2 py-0.5 rounded-full">লাইভ</span>
+                    </div>
+                    
+                    <!-- Circular Avatar Poster List -->
+                    <div class="space-y-3 mt-4 overflow-y-auto max-h-[300px] pr-1">
+                        <div class="flex items-center gap-3 p-2 rounded-xl bg-brand-dark border border-brand-border">
+                            <div class="w-10 h-10 rounded-full bg-gradient-to-tr from-yellow-400 to-amber-600 flex items-center justify-center font-bold text-black text-xs shrink-0">
+                                HR
+                            </div>
+                            <div class="overflow-hidden">
+                                <h4 class="text-xs font-bold text-white truncate">Hasan_Raza</h4>
+                                <p class="text-[10px] text-slate-400 truncate">BTC আজ $68k ব্রেক করতে পারে! 🚀</p>
+                            </div>
+                        </div>
+
+                        <div class="flex items-center gap-3 p-2 rounded-xl bg-brand-dark border border-brand-border">
+                            <div class="w-10 h-10 rounded-full bg-gradient-to-tr from-cyan-400 to-blue-600 flex items-center justify-center font-bold text-black text-xs shrink-0">
+                                TS
+                            </div>
+                            <div class="overflow-hidden">
+                                <h4 class="text-xs font-bold text-white truncate">Tanvir_Spot</h4>
+                                <p class="text-[10px] text-slate-400 truncate">সবাই P2P লেনদেনে সাবধান থাকুন।</p>
+                            </div>
+                        </div>
+
+                        <div class="flex items-center gap-3 p-2 rounded-xl bg-brand-dark border border-brand-border">
+                            <div class="w-10 h-10 rounded-full bg-gradient-to-tr from-emerald-400 to-teal-600 flex items-center justify-center font-bold text-black text-xs shrink-0">
+                                MK
+                            </div>
+                            <div class="overflow-hidden">
+                                <h4 class="text-xs font-bold text-white truncate">Mehedi_King</h4>
+                                <p class="text-[10px] text-slate-400 truncate">নতুন বাইন্যান্স WODL উত্তর দেওয়া হয়েছে।</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="pt-2 text-center border-t border-brand-border/60">
+                    <span class="text-[10px] text-cyan-400 font-mono">👥 লাইভ পোস্টকারীগণ</span>
+                </div>
+            </div>
+        </div>
+
+        <!-- ==================== CLICKABLE PROTOCOL BOX (OPENS FULL MODAL) ==================== -->
+        <div class="glass-card border-l-4 border-l-brand-rose space-y-4 searchable-item" data-keywords="network memo safety protocol নেটওয়ার্ক মেমো" onclick="openModal('networkModal')">
+            <div class="flex justify-between items-center">
+                <div>
+                    <h3 class="text-xl font-bold text-white flex items-center gap-2">
+                        🚨 <span id="net-box-title">Network & Memo Safety Protocol (নেটওয়ার্ক ও মেমো সেফটি)</span>
+                    </h3>
+                    <p class="text-xs text-slate-400 mt-1" id="net-box-sub">Prevent permanent loss of crypto funds during wallet transfers. (বিস্তারিত পড়তে বক্সে ক্লিক করুন)</p>
+                </div>
+                <span class="text-xs bg-rose-500/20 text-rose-300 px-3 py-1 rounded-full border border-rose-500/40 font-mono">গাইডলাইন দেখুন ➔</span>
+            </div>
+
+            <div class="grid grid-cols-1 md:grid-cols-2 gap-4">
+                <div class="sub-box space-y-2">
+                    <h4 class="text-sm font-bold text-brand-gold" id="net-rule1-title">⚠️ 1. Network Matching Rule</h4>
+                    <p class="text-xs text-slate-300" id="net-rule1-desc">Always ensure Deposit Network and Withdrawal Network match 100%...</p>
+                </div>
+                <div class="sub-box space-y-2">
+                    <h4 class="text-sm font-bold text-brand-rose" id="net-rule2-title">🏷️ 2. Mandatory MEMO / TAG Alert</h4>
+                    <p class="text-xs text-slate-300" id="net-rule2-desc">Coins like TON, XRP, NOT, DOGS, and EOS REQUIRE a MEMO/TAG...</p>
+                </div>
+            </div>
+        </div>
+
+        <!-- ==================== AD 2: MIDDLE BANNER AD ==================== -->
+        <div class="ad-container">
+            <script>
+              atOptions = {
+                'key' : '23c891e286a6f2784b6dfa8def1e18a6',
+                'format' : 'iframe',
+                'height' : 300,
+                'width' : 160,
+                'params' : {}
+              };
+            </script>
+            <script src="https://www.highrevenueformat.com/23c891e286a6f2784b6dfa8def1e18a6/invoke.js"></script>
+        </div>
+
+        <!-- ==================== CLICKABLE DICTIONARY BOX (OPENS FULL MODAL) ==================== -->
+        <div class="glass-card border-l-4 border-l-brand-emerald space-y-4 searchable-item" data-keywords="dictionary p2p slippage memo ক্রিপ্টো ডিকশনারি" onclick="openModal('dictModal')">
+            <div class="flex justify-between items-center">
+                <div>
+                    <h3 class="text-xl font-bold text-white flex items-center gap-2">
+                        📖 <span id="dict-box-title">Beginner Crypto Dictionary (শিক্ষানবিস ক্রিপ্টো অভিধান)</span>
+                    </h3>
+                    <p class="text-xs text-slate-400 mt-1" id="dict-box-sub">Essential crypto terminology explained simply. (বিস্তারিত পড়তে বক্সে ক্লিক করুন)</p>
+                </div>
+                <span class="text-xs bg-emerald-500/20 text-emerald-300 px-3 py-1 rounded-full border border-emerald-500/40 font-mono">গাইডলাইন দেখুন ➔</span>
+            </div>
+
+            <div class="grid grid-cols-1 md:grid-cols-3 gap-4 text-xs">
+                <div class="sub-box space-y-1">
+                    <strong class="text-brand-gold block text-sm font-bold">P2P Trading</strong>
+                    <span class="text-slate-300" id="dict-p2p">Direct peer-to-peer buying/selling...</span>
+                </div>
+                <div class="sub-box space-y-1">
+                    <strong class="text-brand-cyan block text-sm font-bold">Slippage</strong>
+                    <span class="text-slate-300" id="dict-slip">The difference between expected trade price...</span>
+                </div>
+                <div class="sub-box space-y-1">
+                    <strong class="text-brand-emerald block text-sm font-bold">MEMO / Tag</strong>
+                    <span class="text-slate-300" id="dict-memo">Unique identification number required...</span>
+                </div>
+            </div>
+        </div>
+
+        <!-- SPOT TRADING CALCULATOR BOX -->
+        <div class="glass-card border-l-4 border-l-brand-cyan space-y-6 cursor-default searchable-item" data-keywords="calculator profit spot ক্যালকুলেটর প্রফিট">
+            <div class="border-b border-brand-border pb-4">
+                <h3 class="text-xl font-extrabold text-white" id="calc-box-title">📊 Spot Trading Profit & Risk Calculator (প্রফিট ক্যালকুলেটর)</h3>
+                <p class="text-xs text-slate-400 mt-1" id="calc-box-sub">Calculate potential profit percentage and USDT gain.</p>
+            </div>
+
+            <div class="grid grid-cols-1 md:grid-cols-3 gap-4 text-xs">
+                <div class="sub-box space-y-1">
+                    <label class="block font-semibold text-slate-300 mb-1" id="lbl-entry">Entry Price ($)</label>
+                    <input type="number" id="entryPrice" placeholder="e.g. 60000" class="w-full bg-brand-dark border border-brand-border rounded-xl px-4 py-2 text-white focus:outline-none focus:border-brand-cyan">
+                </div>
+                <div class="sub-box space-y-1">
+                    <label class="block font-semibold text-slate-300 mb-1" id="lbl-exit">Target Exit Price ($)</label>
+                    <input type="number" id="exitPrice" placeholder="e.g. 66000" class="w-full bg-brand-dark border border-brand-border rounded-xl px-4 py-2 text-white focus:outline-none focus:border-brand-cyan">
+                </div>
+                <div class="sub-box space-y-1">
+                    <label class="block font-semibold text-slate-300 mb-1" id="lbl-amount">Investment Amount ($)</label>
+                    <input type="number" id="investAmount" placeholder="e.g. 100" class="w-full bg-brand-dark border border-brand-border rounded-xl px-4 py-2 text-white focus:outline-none focus:border-brand-cyan">
+                </div>
+            </div>
+
+            <button onclick="calculateProfit()" class="w-full cyan-gradient-btn text-white font-bold py-3 rounded-xl shadow-lg hover:opacity-95 transition text-sm" id="btn-calc">
+                Calculate Result (ফলাফল হিসাব করুন)
+            </button>
+
+            <div id="calcResult" class="hidden sub-box grid grid-cols-1 md:grid-cols-3 gap-4 text-center font-mono">
+                <div>
+                    <span class="text-[11px] text-slate-400 block">Profit %</span>
+                    <strong id="resProfitPct" class="text-lg text-brand-emerald">+0.00%</strong>
+                </div>
+                <div>
+                    <span class="text-[11px] text-slate-400 block">Net Return ($)</span>
+                    <strong id="resProfitUsdt" class="text-lg text-brand-gold">$0.00</strong>
+                </div>
+                <div>
+                    <span class="text-[11px] text-slate-400 block">Total Balance ($)</span>
+                    <strong id="resTotalUsdt" class="text-lg text-white">$0.00</strong>
+                </div>
+            </div>
+        </div>
+
+        <!-- SCAMMER REPORT BOX -->
+        <div class="glass-card border-l-4 border-l-brand-rose space-y-6 cursor-default searchable-item" data-keywords="scammer report photo upload স্ক্যামার রিপোর্ট">
+            <div>
+                <h3 class="text-xl font-extrabold text-white" id="scam-box-title">🚫 Scammer Report & Proof Center (স্ক্যামার রিপোর্ট ও প্রুফ আপলোড)</h3>
+                <p class="text-xs text-slate-400 mt-1" id="scam-box-sub">Upload screenshots and report fraudulent P2P traders.</p>
+            </div>
+
+            <form id="scamReportForm" onsubmit="handleScamReport(event)" class="space-y-4 text-xs">
+                <div class="grid grid-cols-1 md:grid-cols-2 gap-4">
+                    <div class="sub-box space-y-1">
+                        <label class="block font-semibold text-slate-300 mb-1" id="lbl-scam-name">Scammer Name / Telegram / UID</label>
+                        <input type="text" id="scammerName" required placeholder="e.g. @scammer_id" class="w-full bg-brand-dark border border-brand-border rounded-xl px-4 py-2 text-white">
+                    </div>
+                    <div class="sub-box space-y-1">
+                        <label class="block font-semibold text-slate-300 mb-1" id="lbl-scam-type">Scam Type</label>
+                        <select id="scamType" class="w-full bg-brand-dark border border-brand-border rounded-xl px-4 py-2 text-white">
+                            <option value="P2P Fake Payment">P2P Fake Payment Slip (ভুয়া পেমেন্ট স্লিপ)</option>
+                            <option value="Telegram Scam">Telegram Investment Scam (টেলিগ্রাম স্ক্যাম)</option>
+                        </select>
+                    </div>
+                </div>
+
+                <div class="sub-box space-y-1">
+                    <label class="block font-semibold text-slate-300 mb-1" id="lbl-scam-details">Incident Details (ঘটনার বিবরণ)</label>
+                    <textarea id="scamDetails" rows="3" required placeholder="Write details here..." class="w-full bg-brand-dark border border-brand-border rounded-xl p-3 text-white"></textarea>
+                </div>
+
+                <div class="sub-box space-y-2">
+                    <label class="block font-semibold text-slate-300 mb-1" id="lbl-scam-img">Upload Proof Screenshot (প্রুফ স্ক্রিনশট আপলোড)</label>
+                    <input type="file" id="scamPhoto" accept="image/*" onchange="previewImage(event)" class="w-full text-slate-400 file:mr-4 file:py-2 file:px-4 file:rounded-xl file:border-0 file:bg-brand-rose file:text-white cursor-pointer font-bold">
+                    <div id="imagePreviewContainer" class="mt-3 hidden">
+                        <img id="imagePreview" src="#" alt="Preview" class="max-h-40 rounded-lg border border-brand-border">
+                    </div>
+                </div>
+
+                <button type="submit" class="w-full rose-gradient-btn text-white font-bold py-3 rounded-xl shadow-lg transition text-sm" id="btn-submit-scam">
+                    🚨 Submit Scammer Report (রিপোর্ট জমা দিন)
+                </button>
+            </form>
+
+            <div id="reportSuccessMsg" class="hidden p-4 rounded-xl bg-emerald-500/10 border border-emerald-500/30 text-brand-emerald text-xs font-semibold">
+                ✅ আপনার স্ক্যামার রিপোর্ট সফলভাবে জমা হয়েছে!
+            </div>
+        </div>
+
+        <!-- ==================== AD 3: BOTTOM BANNER AD ==================== -->
+        <div class="ad-container">
+            <script src="https://pl31481803.profitableratecpmnetwork.com/34/da/15/34da15050538d0a75ab5e2326167ae7c.js"></script>
+        </div>
+
+    </main>
+
+    <!-- ==================== DETAILED POPUP MODALS (GUIDELINES) ==================== -->
+    <div id="networkModal" class="fixed inset-0 bg-black/80 backdrop-blur-md hidden z-50 flex items-center justify-center p-4">
+        <div class="glass-card bg-brand-card max-w-2xl w-full rounded-2xl p-6 space-y-4 max-h-[85vh] overflow-y-auto border border-brand-border cursor-default">
+            <div class="flex justify-between items-center border-b border-brand-border pb-3">
+                <h3 class="text-lg font-bold text-brand-rose flex items-center gap-2">🚨 নেটওয়ার্ক ও মেমো সুরক্ষা সম্পূর্ণ গাইডলাইন</h3>
+                <button onclick="closeModal('networkModal')" class="text-slate-400 hover:text-white font-bold text-xl">&times;</button>
+            </div>
+            <div class="text-xs text-slate-300 space-y-3 leading-relaxed">
+                <p class="font-bold text-white">ক্রিপ্টো ট্রান্সফার করার সময় ফান্ড চিরতরে হারিয়ে যাওয়া রোধ করার নির্দেশিকা:</p>
+                <ol class="list-decimal pl-5 space-y-2">
+                    <li><strong>নেটওয়ার্ক হুবহু মেলানোর নিয়ম:</strong> ডিপোজিট এবং উইথড্র নেটওয়ার্ক ১০০% এক হতে হবে। যেমন- BEP20 থেকে TRC20 তে পাঠালে ফান্ড সম্পূর্ণ নষ্ট হয়ে যাবে।</li>
+                    <li><strong>মেমো বা ট্যাগ সতর্কতা:</strong> TON, XRP, NOT, DOGS ইত্যাদি কয়েন এক্সচেঞ্জে পাঠানোর সময় MEMO বা Tag দেওয়া বাধ্যতামূলক। এটি না দিলে আপনার ডলার সেন্ট্রাল এক্সচেঞ্জে জমা হবে না।</li>
+                    <li><strong>অ্যাড্রেস চেক করুন:</strong> সবসময় সঠিক অ্যাড্রেস কনফার্ম করে ছোট অ্যামাউন্টে টেস্ট ট্রানজেকশন করে নিতে পারেন।</li>
+                </ol>
+            </div>
+            <button onclick="closeModal('networkModal')" class="cyan-gradient-btn text-white text-xs font-bold px-4 py-2 rounded-xl w-full">বন্ধ করুন</button>
+        </div>
+    </div>
+
+    <div id="dictModal" class="fixed inset-0 bg-black/80 backdrop-blur-md hidden z-50 flex items-center justify-center p-4">
+        <div class="glass-card bg-brand-card max-w-2xl w-full rounded-2xl p-6 space-y-4 max-h-[85vh] overflow-y-auto border border-brand-border cursor-default">
+            <div class="flex justify-between items-center border-b border-brand-border pb-3">
+                <h3 class="text-lg font-bold text-brand-emerald flex items-center gap-2">📖 শিক্ষানবিস ক্রিপ্টো অভিধান (সম্পূর্ণ গাইড)</h3>
+                <button onclick="closeModal('dictModal')" class="text-slate-400 hover:text-white font-bold text-xl">&times;</button>
+            </div>
+            <div class="text-xs text-slate-300 space-y-3 leading-relaxed">
+                <p><strong>P2P Trading:</strong> বিকাশ বা নগদের মতো লোকাল কারেন্সি ব্যবহার করে সরাসরি অন্য কোনো ইউজারের সাথে ডলার কেনাবেচা করার মাধ্যম।</p>
+                <p><strong>Slippage:</strong> মার্কেট দ্রুত ওঠানামা করার সময় আপনি যে দামে অর্ডার করেছেন এবং যে দামে এক্সিকিউট হয়েছে তার মধ্যকার সামান্য তারতম্য।</p>
+                <p><strong>MEMO / Tag:</strong> সেন্ট্রাল এক্সচেঞ্জে নির্দিষ্ট কিছু কয়েন জমা করার জন্য অ্যাকাউন্ট আইডির মতো একটি বিশেষ সংখ্যা যা প্রদান করা আবশ্যক।</p>
+            </div>
+            <button onclick="closeModal('dictModal')" class="cyan-gradient-btn text-white text-xs font-bold px-4 py-2 rounded-xl w-full">বন্ধ করুন</button>
+        </div>
+    </div>
+
+    <!-- Footer -->
+    <footer class="glass-card border-t border-brand-border mt-12 py-6 px-4 text-center text-xs text-slate-500 m-0 rounded-none cursor-default">
+        <p>© 2026 CKB TERMINAL. All Rights Reserved. Built for Smart Crypto Traders.</p>
+    </footer>
+
+    <!-- JavaScript Engine -->
+    <script src="https://s3.tradingview.com/tv.js"></script>
+    <script>
+        // TradingView
+        function initTradingView(symbol) {
+            document.getElementById('tradingview_widget').innerHTML = '';
+            new TradingView.widget({
+                "autosize": true,
+                "symbol": symbol,
+                "interval": "60",
+                "theme": "dark",
+                "container_id": "tradingview_widget"
+            });
+        }
+        function changeChart(s) { initTradingView(s); }
+        window.addEventListener('DOMContentLoaded', () => { initTradingView('BINANCE:BTCUSDT'); });
+
+        // Modals Controls
+        function openModal(modalId) {
+            document.getElementById(modalId).classList.remove('hidden');
+        }
+        function closeModal(modalId) {
+            document.getElementById(modalId).classList.add('hidden');
+        }
+
+        // Profit Calculator
+        function calculateProfit() {
+            const entry = parseFloat(document.getElementById('entryPrice').value);
+            const exit = parseFloat(document.getElementById('exitPrice').value);
+            const invest = parseFloat(document.getElementById('investAmount').value);
+
+            if (!entry || !exit || !invest || entry <= 0) {
+                alert('দয়া করে সঠিক সংখ্যা বসান।');
+                return;
+            }
+
+            const profitPct = ((exit - entry) / entry) * 100;
+            const netProfit = (invest * profitPct) / 100;
+            const total = invest + netProfit;
+
+            document.getElementById('resProfitPct').innerText = (profitPct >= 0 ? '+' : '') + profitPct.toFixed(2) + '%';
+            document.getElementById('resProfitUsdt').innerText = '$' + netProfit.toFixed(2);
+            document.getElementById('resTotalUsdt').innerText = '$' + total.toFixed(2);
+            document.getElementById('calcResult').classList.remove('hidden');
+        }
+
+        // Image Preview
+        function previewImage(event) {
+            const reader = new FileReader();
+            reader.onload = function() {
+                document.getElementById('imagePreview').src = reader.result;
+                document.getElementById('imagePreviewContainer').classList.remove('hidden');
+            };
+            if(event.target.files[0]) reader.readAsDataURL(event.target.files[0]);
+        }
+
+        function handleScamReport(e) {
+            e.preventDefault();
+            document.getElementById('scamReportForm').reset();
+            document.getElementById('imagePreviewContainer').classList.add('hidden');
+            document.getElementById('reportSuccessMsg').classList.remove('hidden');
+            setTimeout(() => { document.getElementById('reportSuccessMsg').classList.add('hidden'); }, 5000);
+        }
+
+        // Bilingual Toggle Engine
+        let lang = 'bn';
+        const langData = {
+            bn: {
+                tick1: "CKB TERMINAL: ১০০% সুরক্ষিত ক্রিপ্টো ও সিকিউরিটি হাব",
+                tick2: "নতুন কয়েন লিস্টিং ও ইভেন্ট নোটিফিকেশন সিস্টেম সক্রিয়",
+                sub: "ক্রিপ্টো নিরাপত্তা ও লাইভ অ্যালার্ট হাব",
+                langBtn: "English",
+                listingTitle: "🚀 লাইভ কয়েন লিস্টিং ও ইভেন্ট নোটিফিকেশন অ্যালার্ট (New Listings & Events)",
+                listingSub: "বড় বড় এক্সচেঞ্জ (Binance, Bybit) নতুন কয়েন লিস্টিং ও গুরুত্বপূর্ণ ক্রিপ্টো ইভেন্টের ইনস্ট্যান্ট আপডেট এখানে সংরক্ষিত হয়।",
+                tgTitle: "অফিশিয়াল টেলিগ্রাম চ্যানেল",
+                tgDesc: "প্রতিদিনের বাইন্যান্স WODL পাজল ও কুইজের সঠিক উত্তর পেতে যুক্ত হন।",
+                tgBtn: "টেলিগ্রাম চ্যানেলে জয়েন করুন ➔",
+                bnTitle: "বাইন্যান্স অফিশিয়াল অ্যাকাউন্ট",
+                bnDesc: "নিরাপদে ক্রিপ্টো ট্রেড করতে আমাদের রেফারেল লিংক দিয়ে অ্যাকাউন্ট খুলুন।",
+                bnBtn: "বাইন্যান্সে জয়েন করুন ➔",
+                chartTitle: "📈 লাইভ মার্কেট অ্যানালিটিক্স ও চার্ট",
+                chartDesc: "রিয়েল-টাইম ক্যান্ডেলস্টিক চার্ট ও টেকনিক্যাল অ্যানালাইসিস।",
+                feedTitle: "CKB Pulse (কমিউনিটি ফিড)",
+                netTitle: "Network & Memo Safety Protocol",
+                netSub: "Prevent permanent loss of crypto funds during wallet transfers. (বিস্তারিত পড়তে বক্সে ক্লিক করুন)",
+                rule1Title: "⚠️ 1. Network Matching Rule",
+                rule1Desc: "Always ensure Deposit Network and Withdrawal Network match 100%...",
+                rule2Title: "🏷️ 2. Mandatory MEMO / TAG Alert",
+                rule2Desc: "Coins like TON, XRP, NOT, DOGS, and EOS REQUIRE a MEMO/TAG...",
+                dictTitle: "Beginner Crypto Dictionary",
+                dictSub: "Essential crypto terminology explained simply. (বিস্তারিত পড়তে বক্সে ক্লিক করুন)",
+                calcTitle: "📊 Spot Trading Profit & Risk Calculator",
+                calcSub: "Calculate potential profit percentage and USDT gain.",
+                lblEntry: "Entry Price ($)",
+                lblExit: "Target Exit Price ($)",
+                lblAmount: "Investment Amount ($)",
+                btnCalc: "Calculate Result (ফলাফল হিসাব করুন)",
+                scamTitle: "🚫 Scammer Report & Proof Center",
+                scamSub: "Upload screenshots and report fraudulent P2P traders.",
+                scamName: "Scammer Name / Telegram / UID",
+                scamType: "Scam Type",
+                scamDetails: "Incident Details (ঘটনার বিবরণ)",
+                scamImg: "Upload Proof Screenshot (প্রুফ স্ক্রিনশট আপলোড)",
+                btnSubmit: "🚨 Submit Scammer Report (রিপোর্ট জমা দিন)"
+            },
+            en: {
+                tick1: "CKB TERMINAL: 100% Secure Crypto & Security Hub",
+                tick2: "New Coin Listings & Event Notifications Active",
+                sub: "Crypto Security & Live Alert Hub",
+                langBtn: "বাংলা",
+                listingTitle: "🚀 Live Coin Listings & Event Notifications Alerts",
+                listingSub: "Instant updates on new coin listings and major crypto events from Binance, Bybit, etc.",
+                tgTitle: "Official Telegram Channel",
+                tgDesc: "Join us to get daily Binance WODL puzzle and quiz answers instantly.",
+                tgBtn: "Join Telegram Channel ➔",
+                bnTitle: "Official Binance Account",
+                bnDesc: "Create your Binance account using our referral link to trade safely.",
+                bnBtn: "Join Binance ➔",
+                chartTitle: "📈 Live Market Analytics & Chart",
+                chartDesc: "Track market trends and perform technical analysis using charts.",
+                feedTitle: "CKB Pulse (Community Feed)",
+                netTitle: "Network & Memo Safety Protocol",
+                netSub: "Prevent permanent loss of crypto funds during wallet transfers. (Click box for full guidelines)",
+                rule1Title: "⚠️ 1. Network Matching Rule",
+                rule1Desc: "Always ensure Deposit Network and Withdrawal Network match 100%...",
+                rule2Title: "🏷️ 2. Mandatory MEMO / TAG Alert",
+                rule2Desc: "Coins like TON, XRP, NOT, DOGS, and EOS REQUIRE a MEMO/TAG...",
+                dictTitle: "Beginner Crypto Dictionary",
+                dictSub: "Essential crypto terminology explained simply. (Click box for full guidelines)",
+                calcTitle: "📊 Spot Trading Profit & Risk Calculator",
+                calcSub: "Calculate potential profit percentage and USDT gain.",
+                lblEntry: "Entry Price ($)",
+                lblExit: "Target Exit Price ($)",
+                lblAmount: "Investment Amount ($)",
+                btnCalc: "Calculate Result",
+                scamTitle: "🚫 Scammer Report & Proof Center",
+                scamSub: "Upload screenshots and report fraudulent P2P traders.",
+                scamName: "Scammer Name / Telegram / UID",
+                scamType: "Scam Type",
+                scamDetails: "Incident Details",
+                scamImg: "Upload Proof Screenshot",
+                btnSubmit: "🚨 Submit Scammer Report"
+            }
+        };
+
+        function toggleLanguage() {
+            lang = lang === 'bn' ? 'en' : 'bn';
+            const t = langData[lang];
+
+            document.getElementById('t-tick1').innerText = t.tick1;
+            document.getElementById('t-tick2').innerText = t.tick2;
+            document.getElementById('hdr-sub').innerText = t.sub;
+            document.getElementById('lang-btn-text').innerText = t.langBtn;
+            document.getElementById('listing-box-title').innerText = t.listingTitle;
+            document.getElementById('listing-box-sub').innerText = t.listingSub;
+            document.getElementById('tg-title').innerText = t.tgTitle;
+            document.getElementById('tg-desc').innerText = t.tgDesc;
+            document.getElementById('tg-btn').innerText = t.tgBtn;
+            document.getElementById('bn-title').innerText = t.bnTitle;
+            document.getElementById('bn-desc').innerText = t.bnDesc;
+            document.getElementById('bn-btn').innerText = t.bnBtn;
+            document.getElementById('chart-main-title').innerText = t.chartTitle;
+            document.getElementById('chart-main-desc').innerText = t.chartDesc;
+            document.getElementById('feed-box-title').innerText = t.feedTitle;
+            document.getElementById('net-box-title').innerText = t.netTitle;
+            document.getElementById('net-box-sub').innerText = t.netSub;
+            document.getElementById('net-rule1-title').innerText = t.rule1Title;
+            document.getElementById('net-rule1-desc').innerText = t.rule1Desc;
+            document.getElementById('net-rule2-title').innerText = t.rule2Title;
+            document.getElementById('net-rule2-desc').innerText = t.rule2Desc;
+            document.getElementById('dict-box-title').innerText = t.dictTitle;
+            document.getElementById('dict-box-sub').innerText = t.dictSub;
+            document.getElementById('calc-box-title').innerText = t.calcTitle;
+            document.getElementById('calc-box-sub').innerText = t.calcSub;
+            document.getElementById('lbl-entry').innerText = t.lblEntry;
+            document.getElementById('lbl-exit').innerText = t.lblExit;
+            document.getElementById('lbl-amount').innerText = t.lblAmount;
+            document.getElementById('btn-calc').innerText = t.btnCalc;
+            document.getElementById('scam-box-title').innerText = t.scamTitle;
+            document.getElementById('scam-box-sub').innerText = t.scamSub;
+            document.getElementById('lbl-scam-name').innerText = t.scamName;
+            document.getElementById('lbl-scam-type').innerText = t.scamType;
+            document.getElementById('lbl-scam-details').innerText = t.scamDetails;
+            document.getElementById('lbl-scam-img').innerText = t.scamImg;
+            document.getElementById('btn-submit-scam').innerText = t.btnSubmit;
+        }
+
+        // Quick Search
+        function quickSearch() {
+            const query = document.getElementById('searchInput').value.toLowerCase();
+            const items = document.querySelectorAll('.searchable-item');
+            items.forEach(item => {
+                const text = (item.innerText + " " + item.getAttribute('data-keywords')).toLowerCase();
+                item.style.display = text.includes(query) ? '' : 'none';
+            });
+        }
+    </script>
+</body>
+</html>
